@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,24 +18,30 @@ http://www.tooplate.com/view/2098-health
      <meta name="author" content="Tooplate">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-     <link rel="stylesheet" href="css/font-awesome.min.css">
-     <link rel="stylesheet" href="css/animate.css">
-     <link rel="stylesheet" href="css/owl.carousel.css">
-     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.min.css' %}">
 
      <!-- MAIN CSS -->
-     <link rel="stylesheet" href="css/tooplate-style.css">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/tooplate-style.css' %}">
+
 
 </head>
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
-
+<style>
+  #about {
+    background: url("{% static 'img/dr1w.jpeg' %}") no-repeat top center;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+</style>
      <!-- PRE LOADER -->
      <section class="preloader">
           <div class="spinner">
-
                <span class="spinner-rotate"></span>
-               
           </div>
      </section>
 
@@ -49,8 +56,8 @@ http://www.tooplate.com/view/2098-health
                     </div>
                          
                     <div class="col-md-8 col-sm-7 text-align-right">
-                         <span class="phone-icon"><i class="fa fa-phone"></i> 010-060-0160</span>
-                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 6:00 AM - 10:00 PM (Mon-Fri)</span>
+                         <span class="phone-icon"><i class="fa fa-phone"></i>(85) 98611-2911</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 8:00 AM - 19:00 PM </span>
                          <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">info@company.com</a></span>
                     </div>
 
@@ -145,14 +152,14 @@ http://www.tooplate.com/view/2098-health
                                    <p>Sed a dignissim lacus. Quisque fermentum est non orci commodo, a luctus urna mattis. Ut placerat, diam a tempus vehicula.</p>
                               </div>
                               <figure class="profile wow fadeInUp" data-wow-delay="1s">
-                                   <img src="images/dr2.jpeg" class="img-responsive" alt="">
+                                   <img src="{% static 'img/dr2.jpeg' %}" class="img-responsive" alt="">
                                    <figcaption>
                                         <h3>Dr. Ticiana</h3>
                                         <p>Fisio Demarto</p>
                                    </figcaption>
                               </figure>
                          </div>
-                 w   </div>
+                    </div>
                     
                </div>
           </div>
@@ -174,7 +181,7 @@ http://www.tooplate.com/view/2098-health
 
                     <div class="col-md-4 col-sm-6">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
-                              <img src="images/combo1.jpeg" class="img-responsive" alt="">
+                              <img src="{% static 'img/combo1.jpeg' %}" class="img-responsive" alt="">
 
                                    <div class="team-info">
                                         <h3>Labios dos Sonhos </h3>
@@ -194,7 +201,7 @@ http://www.tooplate.com/view/2098-health
 
                     <div class="col-md-4 col-sm-6">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                              <img src="images/combo2.jpeg" class="img-responsive" alt="">
+                              <img src="{% static 'img/combo2.jpeg' %}" class="img-responsive" alt="">
 
                                    <div class="team-info">
                                         <h3>Glow Glúteo</h3>
@@ -215,7 +222,7 @@ http://www.tooplate.com/view/2098-health
 
                     <div class="col-md-4 col-sm-6">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
-                              <img src="images/combo3.jpeg" class="img-responsive" alt="">
+                              <img src="{% static 'img/combo3.jpeg' %}" class="img-responsive" alt="">
 
                                    <div class="team-info">
                                         <h3>Microfocado Full Face</h3>
@@ -253,15 +260,15 @@ http://www.tooplate.com/view/2098-health
                     <div class="col-md-4 col-sm-6">
                          <!-- NEWS THUMB -->
                          <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
-                              <a href="news-detail.html">
-                                   <img src="images/news-image1.jpg" class="img-responsive" alt="">
+                              <a href="{% url 'detalhes' %}">
+                                   <img src="{% static 'img/news-image1.jpg' %}" class="img-responsive" alt="">
                               </a>
                               <div class="news-info">
                                    <span>March 08, 2018</span>
                                    <h3><a href="news-detail.html">About Amazing Technology</a></h3>
                                    <p>Maecenas risus neque, placerat volutpat tempor ut, vehicula et felis.</p>
                                    <div class="author">
-                                        <img src="images/author-image.jpg" class="img-responsive" alt="">
+                                        <img src="{% static 'img/author-image.jpg' %}" class="img-responsive" alt="">
                                         <div class="author-info">
                                              <h5>Jeremie Carlson</h5>
                                              <p>CEO / Founder</p>
@@ -274,15 +281,15 @@ http://www.tooplate.com/view/2098-health
                     <div class="col-md-4 col-sm-6">
                          <!-- NEWS THUMB -->
                          <div class="news-thumb wow fadeInUp" data-wow-delay="0.6s">
-                              <a href="news-detail.html">
-                                   <img src="images/news-image2.jpg" class="img-responsive" alt="">
+                              <a href="{% url 'detalhes' %}">
+                                   <img src="{% static 'img/news-image2.jpg' %}" class="img-responsive" alt="">
                               </a>
                               <div class="news-info">
                                    <span>February 20, 2018</span>
                                    <h3><a href="news-detail.html">Introducing a new healing process</a></h3>
                                    <p>Fusce vel sem finibus, rhoncus massa non, aliquam velit. Nam et est ligula.</p>
                                    <div class="author">
-                                        <img src="images/author-image.jpg" class="img-responsive" alt="">
+                                        <img src="{% static 'img/author-image.jpg' %}" class="img-responsive" alt="">
                                         <div class="author-info">
                                              <h5>Jason Stewart</h5>
                                              <p>General Director</p>
@@ -295,15 +302,15 @@ http://www.tooplate.com/view/2098-health
                     <div class="col-md-4 col-sm-6">
                          <!-- NEWS THUMB -->
                          <div class="news-thumb wow fadeInUp" data-wow-delay="0.8s">
-                              <a href="news-detail.html">
-                                   <img src="images/news-image3.jpg" class="img-responsive" alt="">
+                              <a href="{% url 'detalhes' %}">
+                                   <img src="{% static 'img/news-image3.jpg' %}" class="img-responsive" alt="">
                               </a>
                               <div class="news-info">
                                    <span>January 27, 2018</span>
                                    <h3><a href="news-detail.html">Review Annual Medical Research</a></h3>
                                    <p>Vivamus non nulla semper diam cursus maximus. Pellentesque dignissim.</p>
                                    <div class="author">
-                                        <img src="images/author-image.jpg" class="img-responsive" alt="">
+                                        <img src="{% static 'img/author-image.jpg' %}" class="img-responsive" alt="">
                                         <div class="author-info">
                                              <h5>Andrio Abero</h5>
                                              <p>Online Advertising</p>
@@ -324,7 +331,7 @@ http://www.tooplate.com/view/2098-health
                <div class="row">
 
                     <div class="col-md-6 col-sm-6">
-                         <img src="images/appointment-image.jpg" class="img-responsive" alt="">
+                         <img src="{% static 'img/appointment-image.jpg' %}" class="img-responsive" alt="">
                     </div>
 
                     <div class="col-md-6 col-sm-6">
@@ -397,22 +404,21 @@ http://www.tooplate.com/view/2098-health
 
                     <div class="col-md-4 col-sm-4">
                          <div class="footer-thumb"> 
-                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Contact Info</h4>
-                              <p>Fusce at libero iaculis, venenatis augue quis, pharetra lorem. Curabitur ut dolor eu elit consequat ultricies.</p>
-
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Informações de contato</h4>
+                              <!-- <p>Fusce at libero iaculis, venenatis augue quis, pharetra lorem. Curabitur ut dolor eu elit consequat ultricies.</p> -->
                               <div class="contact-info">
-                                   <p><i class="fa fa-phone"></i> 010-070-0170</p>
+                                   <p><i class="fa fa-phone"></i>(85) 98611- 2911</p>
                                    <p><i class="fa fa-envelope-o"></i> <a href="#">info@company.com</a></p>
                               </div>
                          </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4"> 
+                    <!-- <div class="col-md-4 col-sm-4"> 
                          <div class="footer-thumb"> 
                               <h4 class="wow fadeInUp" data-wow-delay="0.4s">Resultados</h4>
                               <div class="latest-stories">
                                    <div class="stories-image">
-                                        <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>
+                                        <a href="#"><img src="{% static 'img/news-image.jpg' %}" class="img-responsive" alt=""></a>
                                    </div>
                                    <div class="stories-info">
                                         <a href="#"><h5>Amazing Technology</h5></a>
@@ -422,7 +428,7 @@ http://www.tooplate.com/view/2098-health
 
                               <div class="latest-stories">
                                    <div class="stories-image">
-                                        <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>
+                                        <a href="#"><img src="{% static 'img/news-image.jpg' %}" class="img-responsive" alt=""></a>
                                    </div>
                                    <div class="stories-info">
                                         <a href="#"><h5>New Healing Process</h5></a>
@@ -430,31 +436,31 @@ http://www.tooplate.com/view/2098-health
                                    </div>
                               </div>
                          </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-md-4 col-sm-4"> 
                          <div class="footer-thumb">
                               <div class="opening-hours">
                                    <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
-                                   <p>Monday - Friday <span>06:00 AM - 10:00 PM</span></p>
+                                   <p>Segunda - Sexta <span>08:00 AM - 19:00 PM</span></p>
                                    <p>Saturday <span>09:00 AM - 08:00 PM</span></p>
                                    <p>Sunday <span>Closed</span></p>
                               </div> 
 
                               <ul class="social-icon">
-                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
-                                   <li><a href="#" class="fa fa-twitter"></a></li>
-                                   <li><a href="#" class="fa fa-instagram"></a></li>
+                                   <li><a href="https://www.facebook.com/lifeesteticaclinica/" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <!-- <li><a href="#" class="fa fa-twitter"></a></li> -->
+                                   <li><a href="https://www.instagram.com/lifeestetica_/" class="fa fa-instagram"></a></li>
                               </ul>
                          </div>
                     </div>
 
-                    <div class="col-md-12 col-sm-12 border-top">
+                    <!-- <div class="col-md-12 col-sm-12 border-top">
                          <div class="col-md-4 col-sm-6">
                               <div class="copyright-text"> 
                                    <p>Copyright &copy; 2018 Your Company 
                                    
-                                   | Design: <a rel="nofollow" href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a></p>
+                                   | Design: <a rel="nofollow" href="https://www.facebook.com/lifeesteticaclinica/" target="_parent">Tooplate</a></p>
                               </div>
                          </div>
                          <div class="col-md-6 col-sm-6">
@@ -470,21 +476,21 @@ http://www.tooplate.com/view/2098-health
                                   <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
                               </div>
                          </div>   
-                    </div>
+                    </div> -->
                     
                </div>
           </div>
      </footer>
 
      <!-- SCRIPTS -->
-     <script src="js/jquery.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/jquery.sticky.js"></script>
-     <script src="js/jquery.stellar.min.js"></script>
-     <script src="js/wow.min.js"></script>
-     <script src="js/smoothscroll.js"></script>
-     <script src="js/owl.carousel.min.js"></script>
-     <script src="js/custom.js"></script>
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.sticky.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/wow.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
 
 </body>
 </html>
