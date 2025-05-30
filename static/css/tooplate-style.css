@@ -467,12 +467,12 @@ http://www.tooplate.com/view/2098-health
   /*---------------------------------------
       ABOUT              
   -----------------------------------------*/
-#about {
-  background: url(".../img/dr1.jpeg") no-repeat top center;
+/* #about {
+    background: url("{% static 'img/dr1.jpeg' %}") no-repeat top center;
   background-size: cover;
   padding-top: 150px;
   padding-bottom: 150px;
-}
+} */
 
   .profile img,
   .profile figcaption {
