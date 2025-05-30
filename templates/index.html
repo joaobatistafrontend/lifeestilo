@@ -58,7 +58,7 @@ http://www.tooplate.com/view/2098-health
                     <div class="col-md-8 col-sm-7 text-align-right">
                          <span class="phone-icon"><i class="fa fa-phone"></i>(85) 98611-2911</span>
                          <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 8:00 AM - 19:00 PM </span>
-                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">info@company.com</a></span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">clinicalifeestetica218@gmail.com</a></span>
                     </div>
 
                </div>
@@ -181,10 +181,7 @@ http://www.tooplate.com/view/2098-health
                     <div class="clearfix"></div>
 
                     {% for promo in promocoes %}
-                         <div class="col-md-4 col-sm-6" style="hover {
-                              all: unset;
-
-                         }">
+                         <div class="col-md-4 col-sm-6" style="hover {all: unset;}">
                               <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
                                    <img src="{{ promo.imagem.url }}" class="img-responsive" alt="">
 
@@ -203,47 +200,6 @@ http://www.tooplate.com/view/2098-health
                               </div>
                          </div>
                     {% endfor %}
-<!-- 
-                    <div class="col-md-4 col-sm-6">
-                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                              <img src="{% static 'img/combo2.jpeg' %}" class="img-responsive" alt="">
-
-                                   <div class="team-info">
-                                        <h3>Glow Glúteo</h3>
-                                        <p>O seu BUMBUM G</p>
-                                        <!-- <div class="team-contact-info">
-                                             <p><i class="fa fa-phone"></i> 010-070-0170</p>
-                                             <p><i class="fa fa-envelope-o"></i> <a href="#">pregnancy@company.com</a></p>
-                                        </div>
-                                        <ul class="social-icon">
-                                             <li><a href="#" class="fa fa-facebook-square"></a></li>
-                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
-                                             <li><a href="#" class="fa fa-flickr"></a></li>
-                                        </ul> -->
-                                   </div>
-
-                         </div>
-                    </div> -->
-
-                    <!-- <div class="col-md-4 col-sm-6">
-                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
-                              <img src="{% static 'img/combo3.jpeg' %}" class="img-responsive" alt="">
-
-                                   <div class="team-info">
-                                        <h3>Microfocado Full Face</h3>
-                                        <p>Rosto completo</p>
-                                        <!-- <div class="team-contact-info">
-                                             <p><i class="fa fa-phone"></i> 010-040-0140</p>
-                                             <p><i class="fa fa-envelope-o"></i> <a href="#">cardio@company.com</a></p>
-                                        </div>
-                                        <ul class="social-icon">
-                                             <li><a href="#" class="fa fa-twitter"></a></li>
-                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
-                                        </ul> -->
-                                   </div>
-
-                         </div>
-                    </div> -->
                     
                </div>
           </div>
@@ -294,13 +250,12 @@ http://www.tooplate.com/view/2098-health
                <div class="row">
 
                     <div class="col-md-6 col-sm-6">
-                         <img src="{% static 'img/appointment-image.jpg' %}" class="img-responsive" alt="">
+                         <img src="{% static 'img/dr3.jpeg' %}" class="img-responsive" alt="">
                     </div>
 
                     <div class="col-md-6 col-sm-6">
                          <!-- CONTACT FORM HERE -->
-                         <form id="appointment-form" role="form" method="post" action="#">
-
+                         <form id="appointment-form" role="form" method="post" action=".">{% csrf_token %}
                               <!-- SECTION TITLE -->
                               <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
                                    <h2>Marque uma consulta</h2>
@@ -309,20 +264,27 @@ http://www.tooplate.com/view/2098-health
                               <div class="wow fadeInUp" data-wow-delay="0.8s">
                                    <div class="col-md-6 col-sm-6">
                                         <label for="name">Nome</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Nome completo">
+                                            {{ form.nome_completo }}
+                                        <!-- <input type="text" class="form-control" id="name" name="name" placeholder="Nome completo"> -->
                                    </div>
 
                                    <div class="col-md-6 col-sm-6">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Seu Email">
+                                            {{ form.email }}
+                                        <!-- <input type="email" class="form-control" id="email" name="email" placeholder="Seu Email"> -->
                                    </div>
 
                                    <div class="col-md-6 col-sm-6">
                                         <label for="date">Selecione uma data</label>
-                                        <input type="date" name="date" value="" class="form-control">
+                                        {{ form.data }}
+                                        <!-- <input type="date" name="date" value="" class="form-control">: -->
                                    </div>
 
-                                   <div class="col-md-6 col-sm-6">
+                                  <div class="col-md-6 col-sm-6">
+                                   <!-- {{ form.voucher.label_tag }} -->
+                                   {{ form.voucher }}
+                                   </div>
+                                    <!-- <div class="col-md-6 col-sm-6">
                                         <label for="select">Selecione seu Voucher</label>
                                         <select class="form-control">
                                              <option>Limpeza de Pele</option>
@@ -330,13 +292,16 @@ http://www.tooplate.com/view/2098-health
                                              <option>Revitalização Facial</option>
                                              <option>Ventoza</option>
                                         </select>
-                                   </div>
+                                   </div> -->
+
 
                                    <div class="col-md-12 col-sm-12">
                                         <label for="telephone">Teleofne</label>
-                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">
+                                        {{ form.telefone }}
+                                        <!-- <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone"> -->
                                         <label for="Message">Obsercação</label>
-                                        <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
+                                        {{ form.observacao }}
+                                        <!-- <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea> -->
                                         <button type="submit" class="form-control" id="cf-submit" name="submit">Enviar</button>
                                    </div>
                               </div>
@@ -371,7 +336,7 @@ http://www.tooplate.com/view/2098-health
                               <!-- <p>Fusce at libero iaculis, venenatis augue quis, pharetra lorem. Curabitur ut dolor eu elit consequat ultricies.</p> -->
                               <div class="contact-info">
                                    <p><i class="fa fa-phone"></i>(85) 98611- 2911</p>
-                                   <p><i class="fa fa-envelope-o"></i> <a href="#">info@company.com</a></p>
+                                   <p><i class="fa fa-envelope-o"></i> <a href="#">clinicalifeestetica218@gmail.com</a></p>
                               </div>
                          </div>
                     </div>
@@ -406,8 +371,8 @@ http://www.tooplate.com/view/2098-health
                               <div class="opening-hours">
                                    <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
                                    <p>Segunda - Sexta <span>08:00 AM - 19:00 PM</span></p>
-                                   <p>Saturday <span>09:00 AM - 08:00 PM</span></p>
-                                   <p>Sunday <span>Closed</span></p>
+                                   <p>Sabado <span>08:00 AM - 12:00 PM</span></p>
+                                   <p>Domingo <span>Fechado</span></p>
                               </div> 
 
                               <ul class="social-icon">
