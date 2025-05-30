@@ -9,8 +9,9 @@ class Voucher(models.Model):
 class Doutoras(models.Model):
     nome = models.CharField("Nome do Voucher", max_length=100)
     imagem = models.ImageField("Imagem da Promoção", upload_to='promocoes/', null=True, blank=True)
+    descricao_curricular = models.CharField("escricao curricular do profissional", max_length=100, null=True, blank=True)
     def __str__(self):
-        return self.nome
+        return f'{self.nome} - {self.descricao_curricular}'
 
 
 class Agendamento(models.Model):
@@ -43,13 +44,13 @@ class Promocao(models.Model):
         return self.nome
 
 
-class ResultadoPromocao(models.Model):
+class Resultados(models.Model):
     doutora_responsavel = models.ForeignKey(Doutoras, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Selecione seu Voucher")
     imagem_antes = models.ImageField("Imagem antes do processo", upload_to='antes_do_processo/', null=True, blank=True)
     imagem_depois = models.ImageField("Imagem do Resultado", upload_to='resultados/', null=True, blank=True)
-    assunto = models.CharField("Nome do Voucher", max_length=100, null=True, blank=True)
+    assunto = models.CharField("Assunto", max_length=100, null=True, blank=True)
     descricao = models.TextField("Descrição Detalhada", null=True, blank=True)
     data_da_publicacao = models.DateTimeField(auto_now=True, null=True, blank=True)
-
+    mostra = models.BooleanField(choices=DISPONIVEL_CHOICES, default=True, null=True, blank=True)
     def __str__(self):
-        return f"Resultado - {self.promocao.nome} - {self.medica_responsavel}"
+        return f"Resultado - {self.doutora_responsavel.nome} - {self.assunto}"
