@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView, DetailView, View
 from .models import *
 from .forms import *
@@ -21,8 +21,9 @@ class IndexView(TemplateView):
   
 
 
-class DetailView(View):
+class ResultadoDetailView(DetailView):
     template_name = 'detail.html'
-    def get(self, request):
-        return render(request, self.template_name)
-    
+    def get(self, request, id):
+        resultado = get_object_or_404(Resultados, id=id)
+        recentes = Resultados.objects.exclude(id=resultado.id).order_by('-data_da_publicacao')[:3]
+        return render(request, self.template_name, {'resultado': resultado, 'recentes':recentes})

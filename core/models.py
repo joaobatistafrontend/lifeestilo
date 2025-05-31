@@ -1,4 +1,6 @@
 from django.db import models
+from PIL import Image
+import os
 
 class Voucher(models.Model):
     nome = models.CharField("Nome do Voucher", max_length=100)
@@ -49,5 +51,36 @@ class Resultados(models.Model):
     descricao = models.TextField("Descrição Detalhada", null=True, blank=True)
     data_da_publicacao = models.DateTimeField(auto_now=True, null=True, blank=True)
     mostra = models.BooleanField(choices=DISPONIVEL_CHOICES, default=True, null=True, blank=True)
+
     def __str__(self):
         return f"Resultado - {self.doutora_responsavel.nome} - {self.assunto}"
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        fixed_size = (800, 600)
+
+        for field_name in ['imagem_antes', 'imagem_depois']:
+            imagem = getattr(self, field_name)
+            if imagem:
+                path = imagem.path
+                img = Image.open(path).convert('RGB')
+
+                # CROP central proporcional para manter a imagem no tamanho exato
+                img_ratio = img.width / img.height
+                target_ratio = fixed_size[0] / fixed_size[1]
+
+                if img_ratio > target_ratio:
+                    # imagem é mais larga → corta nas laterais
+                    new_width = int(img.height * target_ratio)
+                    offset = (img.width - new_width) // 2
+                    crop_box = (offset, 0, offset + new_width, img.height)
+                else:
+                    # imagem é mais alta → corta em cima/baixo
+                    new_height = int(img.width / target_ratio)
+                    offset = (img.height - new_height) // 2
+                    crop_box = (0, offset, img.width, offset + new_height)
+
+                img = img.crop(crop_box)
+                img = img.resize(fixed_size, Image.Resampling.LANCZOS)
+                img.save(path, format='JPEG', quality=90)
