@@ -141,7 +141,7 @@ http://www.tooplate.com/view/2098-health
 
                                                   </div>
                                                   <div class="media-body">
-                                                       <h4 class="media-heading"><a href="#">{{  resul.assunto }}</a></h4>
+                                                       <h4 class="media-heading"><a href="{% url 'detalhes' resul.id %}">{{  resul.assunto }}</a></h4>
                                                   </div>
                                              </div>
                                         {% endfor %}
