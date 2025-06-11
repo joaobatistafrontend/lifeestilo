@@ -7,12 +7,22 @@ class Voucher(models.Model):
     def __str__(self):
         return self.nome
     
+    class Meta:
+        verbose_name = "Voucher"
+        verbose_name_plural = "Vouchers"
+    
 class Doutoras(models.Model):
-    nome = models.CharField("Nome do Voucher", max_length=100)
+    nome = models.CharField("Nome da Doutora", max_length=100)
     imagem = models.ImageField("Imagem da Promoção", upload_to='promocoes/', null=True, blank=True)
-    descricao_curricular = models.CharField("escricao curricular do profissional", max_length=100, null=True, blank=True)
+    descricao_curricular = models.CharField("Descricao curricular do profissional", max_length=100, null=True, blank=True)
+
     def __str__(self):
         return f'{self.nome} - {self.descricao_curricular}'
+    
+    
+    class Meta:
+        verbose_name = "Doutora"
+        verbose_name_plural = "Doutoras"
 
 class Agendamento(models.Model):
     nome = models.CharField("Nome", max_length=100, null=True, blank=True)
@@ -26,6 +36,11 @@ class Agendamento(models.Model):
 
     def __str__(self):
         return f"{self.nome_completo} - {self.voucher}"
+
+    class Meta:
+        verbose_name = "Agendamento"
+        verbose_name_plural = "Agendamentos"
+
     
 DISPONIVEL_CHOICES = (
     (True, 'Sim'),
@@ -41,10 +56,14 @@ class Promocao(models.Model):
 
     def __str__(self):
         return self.nome
+    
+    class Meta:
+        verbose_name = "Promoção"
+        verbose_name_plural = "Promoções"
 
 
 class Resultados(models.Model):
-    doutora_responsavel = models.ForeignKey(Doutoras, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Selecione seu Voucher")
+    doutora_responsavel = models.ForeignKey(Doutoras, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Doutora Responsável")
     imagem_antes = models.ImageField("Imagem antes do processo", upload_to='antes_do_processo/', null=True, blank=True)
     imagem_depois = models.ImageField("Imagem do Resultado", upload_to='resultados/', null=True, blank=True)
     assunto = models.CharField("Assunto", max_length=100, null=True, blank=True)
@@ -54,6 +73,10 @@ class Resultados(models.Model):
 
     def __str__(self):
         return f"Resultado - {self.doutora_responsavel.nome} - {self.assunto}"
+    
+    class Meta:
+        verbose_name = "Resultado"
+        verbose_name_plural = "Resultados"
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
