@@ -24,8 +24,12 @@ class Doutoras(models.Model):
         verbose_name = "Doutora"
         verbose_name_plural = "Doutoras"
 
+STATUS_CHOICES = (
+    (True, 'Atendido'),
+    (False, 'Não Atendido'),
+)
+    
 class Agendamento(models.Model):
-    nome = models.CharField("Nome", max_length=100, null=True, blank=True)
     nome_completo = models.CharField("Nome completo", max_length=200, null=True, blank=True)
     email = models.EmailField("Email",null=True, blank=True)
     seu_email = models.EmailField("Seu Email", null=True, blank=True)
@@ -33,6 +37,7 @@ class Agendamento(models.Model):
     voucher = models.ForeignKey(Voucher, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Selecione seu Voucher")
     telefone = models.CharField("Telefone", max_length=20, null=True, blank=True)
     observacao = models.TextField("Observação", null=True, blank=True)
+    status = models.BooleanField(choices=STATUS_CHOICES, default=False, null=True, blank=True)
 
     def __str__(self):
         return f"{self.nome_completo} - {self.voucher}"
@@ -41,12 +46,11 @@ class Agendamento(models.Model):
         verbose_name = "Agendamento"
         verbose_name_plural = "Agendamentos"
 
-    
+
 DISPONIVEL_CHOICES = (
     (True, 'Sim'),
     (False, 'Não'),
 )
-
 
 class Promocao(models.Model):
     nome = models.CharField("Nome da Promoção", max_length=100, null=True, blank=True)
