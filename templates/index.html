@@ -234,7 +234,7 @@ http://www.tooplate.com/view/2098-health
                                    </a>
                                    <div class="news-info">
                                         <span>{{ resul.data_da_publicacao }}</span>
-                                        <h3><a href="news-detail.html">{{ resul.assunto }}</a></h3>
+                                        <h3><a href="{% url 'detalhes' resul.id %}">{{ resul.assunto }}</a></h3>
                                         <p>{{ resul.descricao|truncatechars:100 }}</p>
                                         <div class="author">
                                              <img src="{{ resul.doutora_responsavel.imagem.url }}" class="img-responsive" alt="">
