@@ -183,11 +183,19 @@ http://www.tooplate.com/view/2098-health
                     {% for promo in promocoes %}
                          <div class="col-md-4 col-sm-6" style="hover {all: unset;}">
                               <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
-                                   <img src="{{ promo.imagem.url }}" class="img-responsive" alt="">
+                                   {% if promo.imagem %}
+                                        <img src="{{ promo.imagem.url }}" class="img-responsive" alt="">
+                                   {% endif %}
 
                                         <div class="team-info">
-                                             <h3>{{ promo.nome }}</h3>
-                                             <p>{{ promo.descricao_curta }}</p>
+                                             {% if promo.nome %}
+                                                  <h3>{{ promo.nome }}</h3>
+                                             {% endif %}
+
+                                             {% if promo.descricao_curta %}
+                                                  <p>{{ promo.descricao_curta }}</p>
+                                             {% endif %}
+
                                              <!-- <div class="team-contact-info">
                                                   <p><i class="fa fa-phone"></i> 010-020-0120</p>
                                                   <p><i class="fa fa-envelope-o"></i> <a href="#">general@company.com</a></p>
