@@ -1,391 +1,576 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-
-     <title>Life Estética</title>
-<!--
-
-Template 2098 Health
-
-http://www.tooplate.com/view/2098-health
-
--->
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
-     <meta name="author" content="Tooplate">
-     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-     <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
-     <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
-     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
-     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.min.css' %}">
-
-     <!-- MAIN CSS -->
-     <link rel="stylesheet" type="text/css" href="{% static 'css/tooplate-style.css' %}">
-
-
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+    <title>Harmonização facial em Fortaleza - Life Estética</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "champagne-glimmer": "#F9F1EB",
+                        "on-tertiary-container": "#373330",
+                        "inverse-primary": "#f2baa6",
+                        "on-secondary-container": "#66625f",
+                        "surface-variant": "#e4e2e2",
+                        "surface-container-low": "#f6f3f3",
+                        "on-tertiary-fixed": "#1e1b18",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary-container": "#4e2a1d",
+                        "secondary-container": "#e6dedb",
+                        "on-secondary-fixed": "#1e1b19",
+                        "on-background": "#1b1c1c",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f3f0f0",
+                        "secondary": "#625d5b",
+                        "outline": "#83746f",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdbcf",
+                        "on-tertiary-fixed-variant": "#4b4642",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e9e1dc",
+                        "surface-dim": "#dcd9d9",
+                        "outline-variant": "#d5c3bd",
+                        "on-secondary-fixed-variant": "#4a4644",
+                        "inverse-surface": "#303030",
+                        "on-primary-fixed": "#311307",
+                        "surface-container": "#f0eded",
+                        "on-surface": "#1b1c1c",
+                        "secondary-fixed-dim": "#ccc5c2",
+                        "primary-container": "#c4907e",
+                        "surface-container-highest": "#e4e2e2",
+                        "tertiary-fixed-dim": "#cdc5c0",
+                        "on-surface-variant": "#514440",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e8e1de",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary": "#7f5444",
+                        "subtle-blush": "#F5E6E0",
+                        "on-primary-fixed-variant": "#643d2e",
+                        "primary-fixed-dim": "#f2baa6",
+                        "surface-tint": "#7f5444",
+                        "tertiary-container": "#a29b97",
+                        "tertiary": "#635d5a",
+                        "deep-onyx": "#1A1A1A",
+                        "surface": "#fcf9f8",
+                        "background": "#fcf9f8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Libre Caslon Text"],
+                        "body-lg": ["Manrope"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "body-md": ["Manrope"],
+                        "button": ["Manrope"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "label-caps": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "button": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .scrolling-wrapper { -ms-overflow-style: none; scrollbar-width: none; }
+        .scrolling-wrapper::-webkit-scrollbar { display: none; }
+        
+        /* Custom styling for Django fields */
+        .form-control {
+            width: 100%;
+            background-color: #fdf5f2;
+            border: 1px solid #d5c3bd;
+            border-radius: 9999px;
+            padding: 0.75rem 1.5rem;
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.875rem;
+            color: #1b1c1c;
+            transition: all 0.2s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #7f5444;
+            box-shadow: 0 0 0 3px rgba(127, 84, 68, 0.1);
+        }
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%237f5444' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+            background-position: right 1rem center;
+            background-repeat: no-repeat;
+            background-size: 1.25em auto;
+            padding-right: 2.5rem;
+        }
+        textarea.form-control {
+            border-radius: 1rem;
+            resize: none;
+        }
+        
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
 </head>
-<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
-<style>
-  #about {
-    background: url("{% static 'img/dr1.jpeg' %}") no-repeat top center;
-    background-size: cover;
-    padding-top: 150px;
-    padding-bottom: 150px;
-  }
-</style>
-     <!-- PRE LOADER -->
-     <section class="preloader">
-          <div class="spinner">
-               <span class="spinner-rotate"></span>
-          </div>
-     </section>
+<body class="bg-surface text-on-surface">
 
+    <!-- TopAppBar -->
+    <header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md flex justify-between items-center px-margin-mobile h-16">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">menu</span>
+            <span class="font-headline-md text-headline-md tracking-widest text-primary uppercase">LIFE ESTÉTICA</span>
+        </div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="font-label-caps text-label-caps text-primary border-b-2 border-primary" href="#home">INÍCIO</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#about">SOBRE</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#promocoes">PROMOÇÕES</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#equipe">EQUIPE</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#resultados">RESULTADOS</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#localizacao">CONTATO</a>
+        </div>
+        <span class="w-6"></span>
+    </header>
 
-     <!-- HEADER -->
-     <header>
-          <div class="container">
-               <div class="row">
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-surface/95 backdrop-blur-lg flex flex-col justify-center items-center gap-6 pt-16">
+        <a class="font-headline-md text-headline-md text-primary" href="#home" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Início</a>
+        <a class="font-headline-md text-headline-md text-primary" href="#about" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Sobre</a>
+        <a class="font-headline-md text-headline-md text-primary" href="#promocoes" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Promoções</a>
+        <a class="font-headline-md text-headline-md text-primary" href="#equipe" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Equipe</a>
+        <a class="font-headline-md text-headline-md text-primary" href="#resultados" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Resultados</a>
+        <a class="font-headline-md text-headline-md text-primary" href="#appointment" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Agendar</a>
+        <a class="font-headline-md text-headline-md text-primary" href="#localizacao" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contato</a>
+    </div>
 
-                    <div class="col-md-4 col-sm-5">
-                         <p>Bem Vindo a Life Estética</p>
+    <main class="pt-16 pb-24 overflow-x-hidden">
+        
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-[85vh] flex flex-col justify-end overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover" alt="Portfólio de Harmonização Orofacial" src="https://lh3.googleusercontent.com/aida/AP1WRLs-eI8SLhfANRBjs3hA-dBKtqEz0CE8hOooUv3QB8j8e9qB5lvA4iRIzlKPER_nebWZgkxBimxE1t0mfPe4oWzwbRQ5WcdmhPKcdRR-_fBbpM-8L-owYuXNtmMmE560tGpjrZMqpulexPdMH9OQ_s4ozzCwNzkZH8oUtOSy1VW7w9RNmLw-P9dfPz8viPVGbiFNrEm2t8bweeGWGekXLGx4upkcVguc-sSTe5_S9a53Gl2eMR4q9Nr3ug"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+            </div>
+            <div class="relative z-10 px-margin-mobile pb-12 md:px-margin-desktop">
+                <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 max-w-2xl leading-tight">
+                    Realce sua beleza natural com segurança
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">
+                    Um espaço dedicado a cuidar de você com os melhores e mais modernos tratamentos de Odontologia e Harmonização Orofacial.
+                </p>
+                <a href="#appointment" class="inline-block bg-primary text-on-primary font-button text-button uppercase py-5 px-10 rounded-full tracking-widest shadow-lg active:scale-95 transition-all w-full text-center md:w-auto">
+                    AGENDAR CONSULTA
+                </a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-section-gap px-margin-mobile bg-champagne-glimmer md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] block mb-4">Bem-vindo à Life Estética</span>
+                        <h2 class="font-headline-lg text-headline-lg text-on-tertiary-container mb-8 leading-snug">Excelência em cada detalhe, cuidado em cada gesto.</h2>
+                        <div class="p-8 bg-surface-container-lowest rounded-xl shadow-sm">
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Na LIFE ESTÉTICA FORTALEZA, acreditamos que a beleza é a expressão externa da sua saúde e bem-estar. Nossa equipe de especialistas altamente qualificados utiliza tecnologias de ponta e técnicas avançadas para proporcionar resultados naturais e harmônicos.
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined">medical_services</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-button text-button text-on-surface">Especialistas Certificados</h4>
+                                    <p class="text-xs text-on-surface-variant uppercase tracking-wider">Segurança e Expertise</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                         
-                    <div class="col-md-8 col-sm-7 text-align-right">
-                         <span class="phone-icon"><i class="fa fa-phone"></i>(85) 98611-2911</span>
-                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 8:00 AM - 19:00 PM </span>
-                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">clinicalifeestetica218@gmail.com</a></span>
+                    <div class="flex flex-col items-center">
+                        <figure class="bg-surface-container-low p-6 rounded-2xl shadow-md w-full max-w-sm">
+                            <img src="{% static 'img/dr2.jpeg' %}" class="w-full aspect-[4/5] object-cover rounded-xl mb-4" alt="Dra. Ticiana">
+                            <figcaption class="text-center">
+                                <h3 class="font-headline-md text-headline-md text-primary">Dra. Ticiana</h3>
+                                <p class="font-body-md text-secondary">Fisioterapeuta Dermatofuncional</p>
+                            </figcaption>
+                        </figure>
                     </div>
+                </div>
+            </div>
+        </section>
 
-               </div>
-          </div>
-     </header>
-
-
-     <!-- MENU -->
-     <section class="navbar navbar-default navbar-static-top" role="navigation">
-          <div class="container">
-
-               <div class="navbar-header">
-                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                         <span class="icon icon-bar"></span>
-                         <span class="icon icon-bar"></span>
-                         <span class="icon icon-bar"></span>
-                    </button>
-
-                    <!-- lOGO TEXT HERE -->
-                     <a href="index.html" class="navbar-brand"><span class="fa-square-custom">L</span>ife Estilo</a>
-               </div>
-
-               <!-- MENU LINKS -->
-               <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                         <li><a href="#top" class="smoothScroll">Principal</a></li>
-                         <li><a href="#about" class="smoothScroll">Sobre nós</a></li>
-                         <li><a href="#team" class="smoothScroll">Promoções</a></li>
-                         <li><a href="#news" class="smoothScroll">Resultados</a></li>
-                         <li><a href="#google-map" class="smoothScroll">Contatos</a></li>
-                         <li class="appointment-btn"><a href="#appointment">Marque uma consulta</a></li>
-                    </ul>
-               </div>
-
-          </div>
-     </section>
-
-
-     <!-- HOME -->
-     <section id="home" class="slider" data-stellar-background-ratio="0.5">
-          <div class="container">
-               <div class="row">
-
-                         <div class="owl-carousel owl-theme">
-                              <div class="item item-first">
-                                   <div class="caption">
-                                        <div class="col-md-offset-1 col-md-10">
-                                             <h3>Transforme sua autoestima</h3>
-                                             <h1>Beleza e bem-estar ao seu alcance</h1>
-                                             <a href="#team" class="section-btn btn btn-default smoothScroll">Nossas Promoções</a>
-                                        </div>
-                                   </div>
-                              </div>
-
-                              <div class="item item-second">
-                                   <div class="caption">
-                                        <div class="col-md-offset-1 col-md-10">
-                                             <h3>Tratamentos que realçam sua beleza</h3>
-                                             <h1>Um novo estilo de vida</h1>
-                                             <a href="#about" class="section-btn btn btn-default btn-gray smoothScroll">Saiba mais</a>
-
-                                        </div>
-                                   </div>
-                              </div>
-
-                              <div class="item item-third">
-                                   <div class="caption">
-                                        <div class="col-md-offset-1 col-md-10">
-                                             <h3>Descubra nossos resultados incríveis</h3>
-                                             <h1>Beleza que inspira confiança</h1>
-                                             <a href="#news" class="section-btn btn btn-default btn-blue smoothScroll">Veja os resultados</a>
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
-
-               </div>
-          </div>
-     </section>
-
-
-     <!-- ABOUT -->
-     <section id="about">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-6 col-sm-6">
-                         <div class="about-info">
-                              <h2 class="wow fadeInUp" data-wow-delay="0.6s">Bem-vindo a Life Esteica</h2>
-                              <div class="wow fadeInUp" data-wow-delay="0.8s">
-                                   <p>Na Life Estética, acreditamos que cada pessoa merece sentir-se linda e confiante. Nossa missão é proporcionar tratamentos estéticos com tecnologia de ponta e atendimento humanizado.</p>
-                                   <p>Oferecemos uma variedade de serviços personalizados para realçar sua beleza natural e elevar sua autoestima.</p>
-                              </div>
-                              <figure class="profile wow fadeInUp" data-wow-delay="1s">
-                                   <img src="{% static 'img/dr2.jpeg' %}" class="img-responsive" alt="">
-                                   <figcaption>
-                                        <h3>Dr. Ticiana</h3>
-                                        <p>Fisioterapeuta Dermatofuncional</p>
-                                   </figcaption>
-                              </figure>
-                         </div>
-                    </div>
-                    
-               </div>
-          </div>
-     </section>
-
-
-     <!-- TEAM -->
-     <section id="team" data-stellar-background-ratio="1">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-6 col-sm-6">
-                         <div class="about-info">
-                              <h2 class="wow fadeInUp" data-wow-delay="0.1s">Nossas Promoções</h2>
-                         </div>
-                    </div>
-
-                    <div class="clearfix"></div>
-
+        <!-- Promocoes / Tratamentos Bento Grid -->
+        <section id="promocoes" class="py-section-gap px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto">
+                <div class="mb-10 text-center">
+                    <span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em]">Procedimentos</span>
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">Nossas Promoções e Destaques</h2>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-6">
                     {% for promo in promocoes %}
-                         <div class="col-md-4 col-sm-6" style="hover {all: unset;}">
-                              <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
-                                   {% if promo.imagem %}
-                                        <img src="{{ promo.imagem.url }}" class="img-responsive" alt="">
-                                   {% endif %}
-
-                                        <div class="team-info">
-                                             {% if promo.nome %}
-                                                  <h3>{{ promo.nome }}</h3>
-                                             {% endif %}
-
-                                             {% if promo.descricao_curta %}
-                                                  <p>{{ promo.descricao_curta }}</p>
-                                             {% endif %}
-
-                                             <!-- <div class="team-contact-info">
-                                                  <p><i class="fa fa-phone"></i> 010-020-0120</p>
-                                                  <p><i class="fa fa-envelope-o"></i> <a href="#">general@company.com</a></p>
-                                             </div>
-                                             <ul class="social-icon">
-                                                  <li><a href="#" class="fa fa-linkedin-square"></a></li>
-                                                  <li><a href="#" class="fa fa-envelope-o"></a></li>
-                                             </ul> -->
-                                        </div>
-                              </div>
-                         </div>
-                    {% endfor %}
-                    
-               </div>
-          </div>
-     </section>
-
-
-     <!-- NEWS -->
-     <section id="news" data-stellar-background-ratio="2.5">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-                         <!-- SECTION TITLE -->
-                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
-                              <h2>Resultados</h2>
-                         </div>
+                    <div class="group relative bg-subtle-blush rounded-2xl overflow-hidden aspect-[4/5] flex flex-col justify-end p-4 sm:p-5 transition-transform duration-500 hover:scale-[0.98] shadow-sm w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm">
+                        {% if promo.imagem %}
+                            <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ promo.imagem.url }}" alt="{{ promo.nome }}"/>
+                        {% endif %}
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent pointer-events-none"></div>
+                        <div class="relative z-10 bg-white/90 dark:bg-deep-onyx/90 backdrop-blur-md p-5 rounded-xl border border-white/50 shadow-lg transition-all duration-300">
+                            <h3 class="font-headline-md text-headline-md text-on-background mb-1.5">{{ promo.nome }}</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-4">{{ promo.descricao_curta }}</p>
+                            <a href="#appointment" class="inline-flex items-center gap-2 text-primary font-button text-button uppercase tracking-widest group-hover:translate-x-2 transition-transform">
+                                Marcar Consulta <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </a>
+                        </div>
                     </div>
+                    {% empty %}
+                    <!-- Fallback Bento items if database is empty -->
+                    <div class="group relative bg-subtle-blush rounded-2xl overflow-hidden aspect-[4/5] flex flex-col justify-end p-4 sm:p-5 transition-transform duration-500 hover:scale-[0.98] w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm">
+                        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLtW1OgapbqyxR9zjIkEOGQ3JquUUtB4q5wGcvb4wVpmJSM_BPB5YpPECYHtC3KbXYLhySv1SC68ALpzQ9Pw0ucCyEKG69CwA1aoq1Zd2FsxHFjWqqNtMdz-4RCCtdsQKHxp-Vdjl-8E1MgpB_lhZOKtNJG33YWa2ZgdGfOpgC0ZtyrXF-H8qV1RfqssRS9FvN_8izVJ6Ao0RGZ_qLASyCcVISMJ7pl1aPcbRs8toqZMfBP0YeCeEKqe" alt="Botox"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent pointer-events-none"></div>
+                        <div class="relative z-10 bg-white/90 dark:bg-deep-onyx/90 backdrop-blur-md p-5 rounded-xl border border-white/50 shadow-lg transition-all duration-300">
+                            <h3 class="font-headline-md text-headline-md text-on-background mb-1.5">Botox</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-4">Suavize linhas de expressão com a precisão dos nossos especialistas.</p>
+                            <a href="#appointment" class="inline-flex items-center gap-2 text-primary font-button text-button uppercase tracking-widest group-hover:translate-x-2 transition-transform">
+                                Saiba mais <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-secondary-container rounded-2xl overflow-hidden aspect-[4/5] flex flex-col justify-end p-4 sm:p-5 transition-transform duration-500 hover:scale-[0.98] w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm">
+                        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsS0GUOZjjfyFmmh8Pe2cDPm2edh2zOHp7WIA1lCWMVSW_g9H62xNzLT9rxghKi1mmELv-WdgqPDiRjM0C8JLcec6_MndbsW5pMWozYJ76rRVey_XQYL3M9-szQzXx8SLzh8QCsx0TwdbCuIg1ZXN6TstWmnagPs2IwKvosuzONFYnwP3EhtdZeGwsqlnwT8EnRpglAcoYxZv0UZWyU3XyIe9gggHmf6m7fS_6PvTtXPafGjMw6Zqh-rg" alt="Preenchimento"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent pointer-events-none"></div>
+                        <div class="relative z-10 bg-white/90 dark:bg-deep-onyx/90 backdrop-blur-md p-5 rounded-xl border border-white/50 shadow-lg transition-all duration-300">
+                            <h3 class="font-headline-md text-headline-md text-on-background mb-1.5">Preenchimento</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-4">Restaure o volume e contorno facial de forma natural e equilibrada.</p>
+                            <a href="#appointment" class="inline-flex items-center gap-2 text-primary font-button text-button uppercase tracking-widest group-hover:translate-x-2 transition-transform">
+                                Saiba mais <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-champagne-glimmer rounded-2xl overflow-hidden aspect-[4/5] flex flex-col justify-end p-4 sm:p-5 transition-transform duration-500 hover:scale-[0.98] w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm">
+                        <div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAz7lEukXTcXgalwDemyZZHavuVvCITZgDL-PCZ4uvLVuqY-24WdEcd5v4QEj-j103-fQ8URoGB4Cml8bgEfdSGSkn54hCr9ji_3DWZ6QVCPwv-veMhWg0gCdcfKyHEMLB-Ov627zwyGr56H1eCxsWE3mBM3cAGKBAYO49U2GLN8D8k4ZNGynWY4ybway11S7NnrPtKSE5tKQpSliLBUO1cuIvHLJNQk8IPQO-yCdT17dO3KpQvMaXcxePa9km7q1d9bq8vKe1tMA')"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent pointer-events-none"></div>
+                        <div class="relative z-10 bg-white/90 dark:bg-deep-onyx/90 backdrop-blur-md p-5 rounded-xl border border-white/50 shadow-lg transition-all duration-300">
+                            <h3 class="font-headline-md text-headline-md text-on-background mb-1.5">Bioestimuladores</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-4">Estimule a produção de colágeno natural para uma pele mais firme.</p>
+                            <a href="#appointment" class="inline-flex items-center gap-2 text-primary font-button text-button uppercase tracking-widest group-hover:translate-x-2 transition-transform">
+                                Saiba mais <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- Nossa Equipe Section -->
+        <section id="equipe" class="py-section-gap px-margin-mobile bg-champagne-glimmer/40 md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto">
+                <div class="mb-16 text-center">
+                    <span class="font-label-caps text-label-caps text-primary tracking-[0.2em] uppercase mb-4 block">Especialistas e Cuidado</span>
+                    <h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">Nossa Equipe</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-8">
+                    {% for doutora in doutoras %}
+                    <div class="group relative overflow-hidden rounded-xl bg-subtle-blush transition-all duration-500 hover:shadow-xl flex flex-col justify-between w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] max-w-sm">
+                        <div class="aspect-[3/4] overflow-hidden bg-surface-container">
+                            {% if doutora.imagem %}
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ doutora.imagem.url }}" alt="{{ doutora.nome }}"/>
+                            {% else %}
+                                <div class="w-full h-full flex items-center justify-center text-primary-container">
+                                    <span class="material-symbols-outlined text-6xl">account_circle</span>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                            <h3 class="font-headline-md text-headline-md text-white">{{ doutora.nome }}</h3>
+                            <p class="font-label-caps text-label-caps text-white/80 tracking-widest mt-1">{{ doutora.descricao_curricular }}</p>
+                        </div>
+                        <div class="p-6 text-center group-hover:opacity-0 transition-opacity duration-300">
+                            <h3 class="font-headline-md text-headline-md text-primary">{{ doutora.nome }}</h3>
+                            <p class="font-body-md text-secondary mt-1">{{ doutora.descricao_curricular }}</p>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <!-- Fallback professionals if database is empty -->
+                    <div class="group relative overflow-hidden rounded-xl bg-subtle-blush transition-all duration-500 hover:shadow-xl w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] max-w-sm">
+                        <div class="aspect-[3/4] overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLua3g3qASgn20xHQ8JeLzEeXQv1flfOJggWS1FnCMeTyw6pnEl6XLzQdx0y15sEf-aRowGYvADUDT6HhpAfWrvA38HloMtNuOtIgTfOEsGOnzdhPQwANju2JeO_d6MQ2YH5wP4JNc88fEBOrpJ4WnEDWNtTt8KNfcHkZ0EybnrdU23cBGj-HL3F1RmsjEqG-vyJOYw20LfQSNrXxJDC82V5-pe-T1xo-t__4fRre_vIa9bAaO-NKRwxqw" alt="Isabella Sardinha"/>
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="font-headline-md text-headline-md text-primary">Isabella Sardinha</h3>
+                            <p class="font-body-md text-secondary">Enfermeira Esteta</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl bg-subtle-blush transition-all duration-500 hover:shadow-xl w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] max-w-sm">
+                        <div class="aspect-[3/4] overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLvrZk3kVtBpsfeUNJWjoc7q3ajiWMKOhtnTis6GU_1FU7ytHW-ht4_iDQdTnxZgs9PQ8wTFy2stWM2D0WaKGl2MvXQCxLidzPXWa_nHiHEQlf9ZeJjyDl0GHPzzF9accwvXYctvw-vjyLD3wRscdGuhgMg1zBvotJ2q2xYSJQ4tmEomG-Bz8IsgsVoFPeoFNL0ecuJNMoM1LXBpV5oNULlXSpN2PMfU5Bt_663KF6Y5wbEYZZaBa5Uf6Q" alt="Letícia Gomes"/>
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="font-headline-md text-headline-md text-primary">Letícia Gomes</h3>
+                            <p class="font-body-md text-secondary">Massoterapeuta</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-xl bg-subtle-blush transition-all duration-500 hover:shadow-xl w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] max-w-sm">
+                        <div class="aspect-[3/4] overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLvxDJQ3NzPUm5yQsS1JTuPj5rpDS9eeBkAHFgruu4ep3CitFJHOnkhSz15--dbkehNdh7neVhYz6iXWSP8gH2PawLFezRi0riOTZdnSVSjVXIJQkFx0HgsNHWvcsQ5asJ0OYh6RmXjO96Z_YiWNKE938jjcqxCAPjOo0Az65k376y7hpPG7oPhlBfu3IQ6L9MobRGU-ute6LwqfP9XU3PFSIWYSCBTix4hr6udL6dGNEG8N0Y8LwZOc" alt="Ana Paula Lucas"/>
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="font-headline-md text-headline-md text-primary">Ana Paula Lucas</h3>
+                            <p class="font-body-md text-secondary">Esteticista</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- Resultados (Antes e Depois) Section -->
+        <section id="resultados" class="py-section-gap px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto">
+                <div class="mb-12 text-center">
+                    <span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em]">Transformações</span>
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">Casos Clínicos e Resultados</h2>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-8">
                     {% for resul in resultados %}
-                         <div class="col-md-4 col-sm-6">
-                              <!-- NEWS THUMB -->
-                              <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
-                                   <a href="{% url 'detalhes' resul.id %}">
-                                        <img src="{{ resul.imagem_antes.url }}" class="img-responsive" alt="">
-                                   </a>
-                                   <div class="news-info">
-                                        <span>{{ resul.data_da_publicacao }}</span>
-                                        <h3><a href="{% url 'detalhes' resul.id %}">{{ resul.assunto }}</a></h3>
-                                        <p>{{ resul.descricao|truncatechars:100 }}</p>
-                                        <div class="author">
-                                             <img src="{{ resul.doutora_responsavel.imagem.url }}" class="img-responsive" alt="">
-                                             <div class="author-info">
-                                                  <h5>{{ resul.doutora_responsavel.nome }}</h5>
-                                                  <p>{{ resul.doutora_responsavel.descricao_curricular }}</p>
-                                             </div>
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
+                    <div class="group relative overflow-hidden bg-surface-container-low rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col justify-between w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] max-w-sm">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            {% if resul.imagem_depois %}
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ resul.imagem_depois.url }}" alt="{{ resul.assunto }}"/>
+                            {% elif resul.imagem_antes %}
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ resul.imagem_antes.url }}" alt="{{ resul.assunto }}"/>
+                            {% endif %}
+                            <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <a href="{% url 'detalhes' resul.id %}" class="bg-surface px-6 py-3 rounded-full text-primary font-button text-button shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    Ver Detalhes
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h4 class="font-headline-md text-headline-md text-primary mb-2">
+                                    <a href="{% url 'detalhes' resul.id %}" class="hover:underline">{{ resul.assunto }}</a>
+                                </h4>
+                                <p class="font-body-md text-on-surface-variant line-clamp-3">{{ resul.descricao }}</p>
+                            </div>
+                            
+                            {% if resul.doutora_responsavel %}
+                            <div class="flex items-center gap-3 mt-6 pt-4 border-t border-outline-variant">
+                                {% if resul.doutora_responsavel.imagem %}
+                                    <img src="{{ resul.doutora_responsavel.imagem.url }}" class="w-8 h-8 rounded-full object-cover" alt="{{ resul.doutora_responsavel.nome }}">
+                                {% endif %}
+                                <div class="text-[11px] text-on-surface-variant">
+                                    <p class="font-bold">Dra. {{ resul.doutora_responsavel.nome }}</p>
+                                    <p class="opacity-80">{{ resul.doutora_responsavel.descricao_curricular }}</p>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div class="w-full text-center py-12 text-secondary">
+                        <p class="font-body-lg">Nenhum caso clínico publicado no momento.</p>
+                    </div>
                     {% endfor %}
-               </div>
-          </div>
-     </section>
+                </div>
+            </div>
+        </section>
 
-
-     <!-- MAKE AN APPOINTMENT -->
-     <section id="appointment" data-stellar-background-ratio="3">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-6 col-sm-6">
-                         <img src="{% static 'img/dr4.jpeg' %}" class="img-responsive" alt="">
+        <!-- Booking Appointment Form Section -->
+        <section id="appointment" class="py-section-gap px-margin-mobile bg-champagne-glimmer/30 md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="hidden lg:block">
+                        <img src="{% static 'img/dr4.jpeg' %}" class="w-full rounded-3xl shadow-2xl object-cover" alt="Agendamento Life Estética">
                     </div>
 
-                    <div class="col-md-6 col-sm-6">
-                         <!-- CONTACT FORM HERE -->
-                         <form id="appointment-form" role="form" method="post" action=".">{% csrf_token %}
-                              <!-- SECTION TITLE -->
-                              <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
-                                   <h2>Marque uma consulta</h2>
-                              </div>
+                    <div class="bg-surface p-8 md:p-12 rounded-3xl shadow-xl border border-outline-variant/30">
+                        <form id="appointment-form" role="form" method="post" action="." class="space-y-6">
+                            {% csrf_token %}
+                            <div class="text-center md:text-left">
+                                <span class="font-label-caps text-label-caps text-primary tracking-[0.2em] uppercase">Reserve seu Horário</span>
+                                <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-6">Marque uma consulta</h2>
+                            </div>
 
-                              <div class="wow fadeInUp" data-wow-delay="0.8s">
-                                   <div class="col-md-6 col-sm-6">
-                                        <label for="name">Nome</label>
-                                            {{ form.nome_completo }}
-                                        <!-- <input type="text" class="form-control" id="name" name="name" placeholder="Nome completo"> -->
-                                   </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block font-label-caps text-[10px] text-primary uppercase mb-2">Nome Completo</label>
+                                    {{ form.nome_completo }}
+                                </div>
+                                <div>
+                                    <label class="block font-label-caps text-[10px] text-primary uppercase mb-2">E-mail de Contato</label>
+                                    {{ form.email }}
+                                </div>
+                                <div>
+                                    <label class="block font-label-caps text-[10px] text-primary uppercase mb-2">Selecione uma Data</label>
+                                    {{ form.data }}
+                                </div>
+                                <div>
+                                    <label class="block font-label-caps text-[10px] text-primary uppercase mb-2">Escolha seu Voucher</label>
+                                    {{ form.voucher }}
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block font-label-caps text-[10px] text-primary uppercase mb-2">Telefone com DDD</label>
+                                    {{ form.telefone }}
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block font-label-caps text-[10px] text-primary uppercase mb-2">Mensagem ou Observação</label>
+                                    {{ form.observacao }}
+                                </div>
+                            </div>
 
-                                   <div class="col-md-6 col-sm-6">
-                                        <label for="email">Email</label>
-                                            {{ form.email }}
-                                        <!-- <input type="email" class="form-control" id="email" name="email" placeholder="Seu Email"> -->
-                                   </div>
-
-                                   <div class="col-md-6 col-sm-6">
-                                        <label for="date">Selecione uma data</label>
-                                        {{ form.data }}
-                                        <!-- <input type="date" name="date" value="" class="form-control">: -->
-                                   </div>
-
-                                  <div class="col-md-6 col-sm-6">
-                                   <!-- {{ form.voucher.label_tag }} -->
-                                   {{ form.voucher }}
-                                   </div>
-                                    <!-- <div class="col-md-6 col-sm-6">
-                                        <label for="select">Selecione seu Voucher</label>
-                                        <select class="form-control">
-                                             <option>Limpeza de Pele</option>
-                                             <option>Massagem Relaxante</option>
-                                             <option>Revitalização Facial</option>
-                                             <option>Ventoza</option>
-                                        </select>
-                                   </div> -->
-
-
-                                   <div class="col-md-12 col-sm-12">
-                                        <label for="telephone">Teleofne</label>
-                                        {{ form.telefone }}
-                                        <!-- <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone"> -->
-                                        <label for="Message">Obsercação</label>
-                                        {{ form.observacao }}
-                                        <!-- <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea> -->
-                                        <button type="submit" class="form-control" id="cf-submit" name="submit">Enviar</button>
-                                   </div>
-                              </div>
+                            <div class="pt-4">
+                                <button type="submit" class="w-full bg-primary hover:bg-primary/95 text-on-primary font-button text-button uppercase py-4 rounded-full tracking-widest shadow-md transition-all active:scale-[0.98]">
+                                    Enviar Solicitação
+                                </button>
+                            </div>
                         </form>
                     </div>
+                </div>
+            </div>
+        </section>
 
-               </div>
-          </div>
-     </section>
-
-
-     <!-- GOOGLE MAP -->
-     <section id="google-map">
-     <!-- How to change your own map point
-            1. Go to Google Maps
-            2. Click on your location point
-            3. Click "Share" and choose "Embed map" tab
-            4. Copy only URL and paste it within the src="" field below
-	-->
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.83367301081077!2d-38.50989399570296!3d-3.736151474517658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c7495682c7a9c7%3A0xaea415b7d53207ec!2sLIFE%20Est%C3%A9tica!5e0!3m2!1spt-BR!2sbr!4v1748360138027!5m2!1spt-BR!2sbr" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
-     </section>           
-
-
-     <!-- FOOTER -->
-     <footer data-stellar-background-ratio="5">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-4 col-sm-4">
-                         <div class="footer-thumb"> 
-                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Informações de contato</h4>
-                              <!-- <p>Fusce at libero iaculis, venenatis augue quis, pharetra lorem. Curabitur ut dolor eu elit consequat ultricies.</p> -->
-                              <div class="contact-info">
-                                   <p><i class="fa fa-phone"></i>(85) 98611- 2911</p>
-                                   <p><i class="fa fa-envelope-o"></i> <a href="#">clinicalifeestetica218@gmail.com</a></p>
-                              </div>
-                         </div>
+        <!-- Location & Contact Info Section -->
+        <section id="localizacao" class="px-margin-mobile md:px-margin-desktop py-section-gap bg-secondary-container/20">
+            <div class="max-w-container-max mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8">
+                        <div>
+                            <span class="font-label-caps text-label-caps text-primary tracking-[0.2em] uppercase mb-4 block">Visite-nos</span>
+                            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 italic">Onde a harmonia encontra o equilíbrio</h2>
+                        </div>
+                        
+                        <div class="bg-surface p-8 rounded-xl shadow-sm space-y-6 border border-outline-variant/30">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-primary/10 p-3 rounded-full text-primary">
+                                    <span class="material-symbols-outlined">location_on</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-label-caps text-label-caps text-primary uppercase mb-1">Endereço</h4>
+                                    <p class="font-body-lg text-body-lg text-on-surface-variant">Rua Afonso Celso, 218 - Aldeota, Fortaleza - CE</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="bg-primary/10 p-3 rounded-full text-primary">
+                                    <span class="material-symbols-outlined">schedule</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-label-caps text-label-caps text-primary uppercase mb-1">Funcionamento</h4>
+                                    <p class="font-body-lg text-body-lg text-on-surface-variant">Segunda a Sexta: 08:00 AM - 19:00 PM</p>
+                                    <p class="font-body-lg text-body-lg text-on-surface-variant">Sábado: 08:00 AM - 12:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a class="group flex items-center justify-center gap-3 bg-[#25D366] text-white py-5 rounded-full font-button text-button uppercase tracking-widest hover:shadow-xl transition-all active:scale-95" href="https://wa.me/5585986112911" target="_blank">
+                            <span class="material-symbols-outlined">chat</span>
+                            Fale conosco no WhatsApp
+                        </a>
                     </div>
 
-                    <div class="col-md-4 col-sm-4"> 
-                         <div class="footer-thumb">
-                              <div class="opening-hours">
-                                   <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opções de Horarios</h4>
-                                   <p>Segunda - Sexta <span>08:00 AM - 19:00 PM</span></p>
-                                   <p>Sabado <span>08:00 AM - 12:00 PM</span></p>
-                                   <p>Domingo <span>Fechado</span></p>
-                              </div> 
-
-                              <ul class="social-icon">
-                                   <li><a href="https://www.facebook.com/lifeesteticaclinica/" class="fa fa-facebook-square" attr="facebook icon"></a></li>
-                                   <!-- <li><a href="#" class="fa fa-twitter"></a></li> -->
-                                   <li><a href="https://www.instagram.com/lifeestetica_/" class="fa fa-instagram"></a></li>
-                                   <li><a href="/admin/" class="fa fa-sign-in"></a></li>
-                              </ul>
-                         </div>
+                    <!-- Map container -->
+                    <div class="relative h-[450px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-10">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.83367301081077!2d-38.50989399570296!3d-3.736151474517658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c7495682c7a9c7%3A0xaea415b7d53207ec!2sLIFE%20Est%C3%A9tica!5e0!3m2!1spt-BR!2sbr!4v1748360138027!5m2!1spt-BR!2sbr" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen="" loading="lazy"></iframe>
                     </div>
+                </div>
+            </div>
+        </section>
 
-               </div>
-          </div>
-     </footer>
+    </main>
 
-     <footer style="background-color:#f5f5f5; padding:20px; text-align:center; font-family: Arial, sans-serif; font-size:14px; color:#333;">
-          <p><strong>LIFE Estética</strong></p>
-          <p>CNPJ: 23.064.990/0001-27</p>
-          <p>Rua Afonso Celso, 218 - Aldeota, Fortaleza - CE, 60140-190</p>
-     </footer>
+    <!-- Footer -->
+    <footer class="bg-secondary-container dark:bg-on-tertiary-container flex flex-col items-center text-center p-margin-mobile pb-28 gap-unit">
+        <div class="py-10 max-w-container-max mx-auto">
+            <h2 class="font-headline-md text-primary mb-4 tracking-widest"><a href="/admin/" class="cursor-default select-none" style="color: inherit; text-decoration: none;">LIFE ESTÉTICA</a></h2>
+            <p class="text-xs text-on-secondary-container/85 max-w-md mx-auto mb-6 leading-relaxed">
+                Rua Afonso Celso, 218 - Aldeota, Fortaleza - CE | CNPJ: 23.064.990/0001-27<br/>
+                <span class="inline-block mt-1 font-semibold text-on-secondary-container">WhatsApp: (85) 98611-2911</span>
+            </p>
+            <div class="flex justify-center items-center gap-8 mb-8">
+                <a href="https://wa.me/5585986112911" target="_blank" class="text-on-secondary-container hover:text-[#25D366] transition-colors flex items-center gap-2 font-button text-sm">
+                    <i class="fa fa-whatsapp text-2xl text-[#25D366]"></i> WhatsApp
+                </a>
+                <a href="https://www.facebook.com/lifeesteticaclinica/" target="_blank" class="text-on-secondary-container hover:text-primary transition-colors flex items-center gap-2 font-button text-sm">
+                    <i class="fa fa-facebook-square text-2xl"></i> Facebook
+                </a>
+                <a href="https://www.instagram.com/lifeestetica_/" target="_blank" class="text-on-secondary-container hover:text-primary transition-colors flex items-center gap-2 font-button text-sm">
+                    <i class="fa fa-instagram text-2xl"></i> Instagram
+                </a>
+            </div>
+            <p class="text-on-secondary-container/60 text-[10px] uppercase tracking-widest font-label-caps">
+                © 2024 LIFE ESTÉTICA FORTALEZA. TODOS OS DIREITOS RESERVADOS.
+            </p>
+        </div>
+    </footer>
 
-     <!-- SCRIPTS -->
-     <script src="{% static 'js/jquery.js' %}"></script>
-     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-     <script src="{% static 'js/jquery.sticky.js' %}"></script>
-     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
-     <script src="{% static 'js/wow.min.js' %}"></script>
-     <script src="{% static 'js/smoothscroll.js' %}"></script>
-     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-     <script src="{% static 'js/custom.js' %}"></script>
+    <!-- BottomNavBar (Mobile only) -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-secondary/95 dark:bg-deep-onyx/95 backdrop-blur-xl shadow-[0_-4px_20px_rgba(196,144,126,0.1)] rounded-t-full">
+        <a class="flex flex-col items-center justify-center text-primary-fixed bg-primary-container/20 rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#home">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-label-caps text-[10px] mt-1">Início</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="#promocoes">
+            <span class="material-symbols-outlined">spa</span>
+            <span class="font-label-caps text-[10px] mt-1">Serviços</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="https://wa.me/5585986112911" target="_blank">
+            <span class="material-symbols-outlined">chat</span>
+            <span class="font-label-caps text-[10px] mt-1">WhatsApp</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="#appointment">
+            <span class="material-symbols-outlined">calendar_month</span>
+            <span class="font-label-caps text-[10px] mt-1">Agendar</span>
+        </a>
+    </nav>
 
+    <!-- FontAwesome helper for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </body>
 </html>

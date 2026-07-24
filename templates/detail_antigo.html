@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+     <title>Health Template - News Page</title>
+<!--
+
+Template 2098 Health
+
+http://www.tooplate.com/view/2098-health
+
+-->
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <!-- MAIN CSS -->
+     
+     <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
+    
+     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.min.css' %}">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" type="text/css" href="{% static 'css/tooplate-style.css' %}">
+
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-3">
+                         <p>Bem Vindo a LIFE Estética</p>
+                    </div>
+                         
+                    <div class="col-md-8 col-sm-9 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i> 010-060-0160</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 6:00 AM - 10:00 PM (Mon-Fri)</span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">info@company.com</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand"><span class="fa-square-custom">L</span>ife Estilo</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li class="appointment-btn"><a href="{% url 'index' %}">Pagina Principal</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- NEWS DETAIL -->
+     <section id="news-detail" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-8 col-sm-7">
+                         <!-- NEWS THUMB -->
+                         <div class="news-detail-thumb">
+                              {% if resultado.imagem_antes %}
+                                   <div class="news-image">
+                                        <img src="{{ resultado.imagem_antes.url }}" class="img-responsive" alt="">
+                                   </div>
+                              {% endif %}
+                              {% if resultado.imagem_depois %}
+                                   <div class="news-image">
+                                        <img src="{{ resultado.imagem_depois.url }}" class="img-responsive" alt="">
+                                   </div>
+                              {% endif %}
+                              <h3>{{ resultado.assunto }}</h3>
+                              <p>{{ resultado.descricao }}</p>
+                              
+                              
+                              <div class="news-social-share">
+                                   <h4>Redes Sociais</h4>
+                                        <a href="https://www.facebook.com/lifeesteticaclinica/" class="btn btn-primary"><i class="fa fa-facebook"></i>Facebook</a>
+                                        <a href="https://www.instagram.com/lifeestetica_/" class="btn btn-success"><i class="fa fa-instagram"></i>Instagram</a>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-5">
+                         <div class="news-sidebar">
+                              <!-- <div class="news-author">
+                                   <h4>About the author</h4>
+                                   <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque.</p>
+                              </div> -->
+
+                              <div class="recent-post">
+                                   <h4>Postagens recentes</h4>
+                                        {% for resul in recentes %}
+                                             <div class="media">
+                                                  <div class="media-object pull-left">
+                                                       {% if resul.imagem_depois %}
+                                                            <a href="{% url 'detalhes' resul.id %}"><img src="{{ resul.imagem_depois.url }}" class="img-responsive" alt=""></a>
+                                                       {% else %}
+                                                            <a href="{% url 'detalhes' resul.id %}"><img src="{{ resul.imagem_antes.url }}" class="img-responsive" alt=""></a>
+                                                       {% endif %}
+
+                                                  </div>
+                                                  <div class="media-body">
+                                                       <h4 class="media-heading"><a href="{% url 'detalhes' resul.id %}">{{  resul.assunto }}</a></h4>
+                                                  </div>
+                                             </div>
+                                        {% endfor %}
+                              </div>
+
+                              <!-- <div class="news-categories">
+                                   <h4>Categories</h4>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i> Dental</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i> Cardiology</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i> Health</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i> Consultant</a></li>
+                              </div>
+
+                              <div class="news-ads sidebar-ads">
+                                   <h4>Sidebar Banner Ad</h4>
+                              </div>
+
+                              <div class="news-tags">
+                                   <h4>Tags</h4>
+                                        <li><a href="#">Pregnancy</a></li>
+                                        <li><a href="#">Health</a></li>
+                                        <li><a href="#">Consultant</a></li>
+                                        <li><a href="#">Medical</a></li>
+                                        <li><a href="#">Doctors</a></li>
+                                        <li><a href="#">Social</a></li>
+                              </div> -->
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </section>
+         
+
+
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb"> 
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Informações de contato</h4>
+                              <!-- <p>Fusce at libero iaculis, venenatis augue quis, pharetra lorem. Curabitur ut dolor eu elit consequat ultricies.</p> -->
+                              <div class="contact-info">
+                                   <p><i class="fa fa-phone"></i>(85) 98611- 2911</p>
+                                   <p><i class="fa fa-envelope-o"></i> <a href="#">clinicalifeestetica218@gmail.com</a></p>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4"> 
+                         <div class="footer-thumb">
+                              <div class="opening-hours">
+                                   <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opções de Horarios</h4>
+                                   <p>Segunda - Sexta <span>08:00 AM - 19:00 PM</span></p>
+                                   <p>Sabado <span>08:00 AM - 12:00 PM</span></p>
+                                   <p>Domingo <span>Fechado</span></p>
+                              </div> 
+
+                              <ul class="social-icon">
+                                   <li><a href="https://www.facebook.com/lifeesteticaclinica/" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <!-- <li><a href="#" class="fa fa-twitter"></a></li> -->
+                                   <li><a href="https://www.instagram.com/lifeestetica_/" class="fa fa-instagram"></a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </footer>
+
+
+     <!-- SCRIPTS -->
+     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+     <script src="{% static 'js/magnific-popup-options.js' %}"></script>
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.sticky.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/wow.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Life Estética | Nossa Equipe &amp; Localização</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "champagne-glimmer": "#F9F1EB",
+                    "on-tertiary-container": "#373330",
+                    "inverse-primary": "#f2baa6",
+                    "on-secondary-container": "#66625f",
+                    "surface-variant": "#e4e2e2",
+                    "surface-container-low": "#f6f3f3",
+                    "on-tertiary-fixed": "#1e1b18",
+                    "surface-bright": "#fcf9f8",
+                    "on-primary-container": "#4e2a1d",
+                    "secondary-container": "#e6dedb",
+                    "on-secondary-fixed": "#1e1b19",
+                    "on-background": "#1b1c1c",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f3f0f0",
+                    "secondary": "#625d5b",
+                    "outline": "#83746f",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdbcf",
+                    "on-tertiary-fixed-variant": "#4b4642",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae7e7",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#e9e1dc",
+                    "surface-dim": "#dcd9d9",
+                    "outline-variant": "#d5c3bd",
+                    "on-secondary-fixed-variant": "#4a4644",
+                    "inverse-surface": "#303030",
+                    "on-primary-fixed": "#311307",
+                    "surface-container": "#f0eded",
+                    "on-surface": "#1b1c1c",
+                    "secondary-fixed-dim": "#ccc5c2",
+                    "primary-container": "#c4907e",
+                    "surface-container-highest": "#e4e2e2",
+                    "tertiary-fixed-dim": "#cdc5c0",
+                    "on-surface-variant": "#514440",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#e8e1de",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary": "#7f5444",
+                    "subtle-blush": "#F5E6E0",
+                    "on-primary-fixed-variant": "#643d2e",
+                    "primary-fixed-dim": "#f2baa6",
+                    "surface-tint": "#7f5444",
+                    "tertiary-container": "#a29b97",
+                    "tertiary": "#635d5a",
+                    "deep-onyx": "#1A1A1A",
+                    "surface": "#fcf9f8",
+                    "background": "#fcf9f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "container-max": "1200px",
+                    "section-gap": "120px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Libre Caslon Text"],
+                    "body-lg": ["Manrope"],
+                    "display-lg-mobile": ["Libre Caslon Text"],
+                    "body-md": ["Manrope"],
+                    "button": ["Manrope"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "headline-md": ["Libre Caslon Text"],
+                    "label-caps": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "button": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(245, 230, 224, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .service-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #c4907e, transparent);
+      }
+      .profile-mask {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md flex justify-between items-center px-margin-mobile h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity active:scale-95 transition-transform" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md tracking-widest text-primary">LIFE ESTÉTICA</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity active:scale-95 transition-transform" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="pt-24 pb-32">
+<!-- Hero Section / Header Title -->
+<section class="px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="max-w-container-max mx-auto text-center">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em] uppercase mb-4 block">Excelência &amp; Cuidado</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary-container mb-8">Nossa Equipe</h2>
+<div class="w-24 h-1 bg-primary-container mx-auto rounded-full"></div>
+</div>
+</section>
+<!-- Team Bento Grid -->
+<section class="px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Professional 1: Isabella Sardinha -->
+<div class="group relative overflow-hidden rounded-xl bg-subtle-blush transition-all duration-500 hover:shadow-2xl">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLua3g3qASgn20xHQ8JeLzEeXQv1flfOJggWS1FnCMeTyw6pnEl6XLzQdx0y15sEf-aRowGYvADUDT6HhpAfWrvA38HloMtNuOtIgTfOEsGOnzdhPQwANju2JeO_d6MQ2YH5wP4JNc88fEBOrpJ4WnEDWNtTt8KNfcHkZ0EybnrdU23cBGj-HL3F1RmsjEqG-vyJOYw20LfQSNrXxJDC82V5-pe-T1xo-t__4fRre_vIa9bAaO-NKRwxqw"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-gutter">
+<h3 class="font-headline-md text-headline-md text-white">Isabella Sardinha</h3>
+<p class="font-label-caps text-label-caps text-white/80 tracking-widest">Enfermeira Esteta</p>
+</div>
+<div class="p-6 text-center group-hover:opacity-0 transition-opacity duration-300">
+<h3 class="font-headline-md text-headline-md text-primary">Isabella Sardinha</h3>
+<p class="font-body-md text-secondary">Enfermeira Esteta</p>
+</div>
+</div>
+<!-- Professional 2: Letícia Gomes -->
+<div class="group relative overflow-hidden rounded-xl bg-subtle-blush transition-all duration-500 hover:shadow-2xl md:translate-y-12">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLvrZk3kVtBpsfeUNJWjoc7q3ajiWMKOhtnTis6GU_1FU7ytHW-ht4_iDQdTnxZgs9PQ8wTFy2stWM2D0WaKGl2MvXQCxLidzPXWa_nHiHEQlf9ZeJjyDl0GHPzzF9accwvXYctvw-vjyLD3wRscdGuhgMg1zBvotJ2q2xYSJQ4tmEomG-Bz8IsgsVoFPeoFNL0ecuJNMoM1LXBpV5oNULlXSpN2PMfU5Bt_663KF6Y5wbEYZZaBa5Uf6Q"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-gutter">
+<h3 class="font-headline-md text-headline-md text-white">Letícia Gomes</h3>
+<p class="font-label-caps text-label-caps text-white/80 tracking-widest">Massoterapeuta</p>
+</div>
+<div class="p-6 text-center group-hover:opacity-0 transition-opacity duration-300">
+<h3 class="font-headline-md text-headline-md text-primary">Letícia Gomes</h3>
+<p class="font-body-md text-secondary">Massoterapeuta</p>
+</div>
+</div>
+<!-- Professional 3: Amanda Naves -->
+<div class="group relative overflow-hidden rounded-xl bg-subtle-blush transition-all duration-500 hover:shadow-2xl">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLsQohlEIIP6IF2Wth3_QGlCxGcunULo0WdaEcJ3mF1aILhHawh1rzkaCB7WTmOvmcnyaWt-K5TG_6WGQM5Db6WPs9B-xk3VQcD0lea9slL9KC5CzQueefQBazWKrIpnlC2olOWMILY8E6rTEL14zptT1jaljzcJryhyIFQ_COfYuayIljfDfgIxsKYyWuq7aU0VrOz8nQR9JlWsuyCKf7RznQVgU2Rh2LFLtkBSxbHHzXxD1u8poIKWjw"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-gutter">
+<h3 class="font-headline-md text-headline-md text-white">Amanda Naves</h3>
+<p class="font-label-caps text-label-caps text-white/80 tracking-widest">Cirurgiã Dentista HOF</p>
+</div>
+<div class="p-6 text-center group-hover:opacity-0 transition-opacity duration-300">
+<h3 class="font-headline-md text-headline-md text-primary">Amanda Naves</h3>
+<p class="font-body-md text-secondary">Cirurgiã Dentista HOF</p>
+</div>
+</div>
+<!-- Professional 4: Ana Paula Lucas -->
+<div class="group relative overflow-hidden rounded-xl bg-subtle-blush transition-all duration-500 hover:shadow-2xl md:-translate-y-8">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLvxDJQ3NzPUm5yQsS1JTuPj5rpDS9eeBkAHFgruu4ep3CitFJHOnkhSz15--dbkehNdh7neVhYz6iXWSP8gH2PawLFezRi0riOTZdnSVSjVXIJQkFx0HgsNHWvcsQ5asJ0OYh6RmXjO96Z_YiWNKE938jjcqxCAPjOo0Az65k376y7hpPG7oPhlBfu3IQ6L9MobRGU-ute6LwqfP9XU3PFSIWYSCBTix4hr6udL6dGNEG8N0Y8LwZOc"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-gutter">
+<h3 class="font-headline-md text-headline-md text-white">Ana Paula Lucas</h3>
+<p class="font-label-caps text-label-caps text-white/80 tracking-widest">Esteticista</p>
+</div>
+<div class="p-6 text-center group-hover:opacity-0 transition-opacity duration-300">
+<h3 class="font-headline-md text-headline-md text-primary">Ana Paula Lucas</h3>
+<p class="font-body-md text-secondary">Esteticista</p>
+</div>
+</div>
+<!-- Professional 5: Paula Thais -->
+<div class="group relative overflow-hidden rounded-xl bg-subtle-blush transition-all duration-500 hover:shadow-2xl md:translate-y-4">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLuaRO1znl8bNjJl4ZfzQoL1TCV9SEcPFGYzOztjJ5ra0O6e1Jnyh5c6f8UHZDryrheRubr9CJHt9VdaCaDH9agVYYQqMLCS4Sc4C_MTl8j85MVMVrlUDLljaMPVFtja96iC4TjT3IM5u6wyDOacCYTsDicKKw9ZkpGRFEM_ZLRet7knhc0GzmB9okOzwc47N-EEehoGI4EMSQzKg-4kjMOZ-IuuQyz9nB-Dtolh7-X8-MZPzI0XngD2iw"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-gutter">
+<h3 class="font-headline-md text-headline-md text-white">Paula Thais</h3>
+<p class="font-label-caps text-label-caps text-white/80 tracking-widest">Farmacêutica Esteta</p>
+</div>
+<div class="p-6 text-center group-hover:opacity-0 transition-opacity duration-300">
+<h3 class="font-headline-md text-headline-md text-primary">Paula Thais</h3>
+<p class="font-body-md text-secondary">Farmacêutica Esteta</p>
+</div>
+</div>
+<!-- Call to Action Card -->
+<div class="bg-primary flex flex-col items-center justify-center p-gutter rounded-xl text-center md:translate-y-12">
+<span class="material-symbols-outlined text-white text-5xl mb-6 animate-pulse" data-icon="spa">spa</span>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Pronta para sua melhor versão?</h3>
+<p class="text-white/80 font-body-md mb-8">Nossa equipe de especialistas está aguardando você para um atendimento personalizado.</p>
+<button class="bg-white text-primary px-8 py-4 rounded-full font-button text-button uppercase hover:bg-champagne-glimmer transition-colors active:scale-95">
+                            Agendar Consulta
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap bg-secondary-container/30" id="localizacao">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div>
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em] uppercase mb-4 block">Visite-nos</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 italic">Onde a harmonia encontra o equilíbrio</h2>
+</div>
+<div class="glass-card p-8 rounded-xl space-y-6">
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary uppercase mb-1">Endereço</h4>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Rua Afonso Celso, 218 - Aldeota, Fortaleza - CE</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary uppercase mb-1">Funcionamento</h4>
+<div class="flex items-center gap-2">
+<p class="font-body-lg text-body-lg text-on-surface-variant">Aberto 24h</p>
+<span class="inline-block w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+</div>
+</div>
+</div>
+</div>
+<a class="group flex items-center justify-center gap-3 bg-[#25D366] text-white py-5 rounded-full font-button text-button uppercase tracking-widest hover:shadow-xl transition-all active:scale-95" href="https://wa.me/yournumber">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                            Fale conosco no WhatsApp
+                        </a>
+</div>
+<div class="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+<div class="absolute inset-0 bg-gray-200" data-location="Fortaleza, Rua Afonso Celso 218" style="">
+<div class="w-full h-full flex flex-col items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-6xl mb-4" data-icon="map">map</span>
+<p class="font-label-caps">Google Maps Placeholder</p>
+</div>
+</div>
+<!-- Stylized Marker Overlay -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-float">
+<div class="bg-primary-container p-4 rounded-full shadow-2xl">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="location_on" data-weight="fill">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-secondary-container dark:bg-on-tertiary-container flex flex-col items-center text-center p-margin-mobile mb-20 w-full gap-unit">
+<h2 class="font-headline-md text-primary pt-8">LIFE ESTÉTICA</h2>
+<div class="flex flex-wrap justify-center gap-6 my-4">
+<a class="font-body-md text-on-secondary-container hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Polílica de Privacidade</a>
+<a class="font-body-md text-on-secondary-container hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Termos de Uso</a>
+<a class="font-body-md text-primary font-bold hover:text-primary transition-colors underline-offset-4 hover:underline" href="#localizacao">Localização</a>
+</div>
+<p class="font-body-md text-on-secondary-container mb-8">© 2024 LIFE ESTÉTICA FORTALEZA. TODOS OS DIREITOS RESERVADOS.</p>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-secondary dark:bg-deep-onyx backdrop-blur-xl rounded-t-full shadow-[0_-4px_20px_rgba(196,144,126,0.1)]">
+<div class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-caps text-[10px] mt-1">Início</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="spa">spa</span>
+<span class="font-label-caps text-[10px] mt-1">Serviços</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-label-caps text-[10px] mt-1">WhatsApp</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary-fixed bg-primary-container/20 rounded-full px-4 py-1 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-caps text-[10px] mt-1">Agendar</span>
+</div>
+</nav>
+<script>
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Serviços | LIFE ESTÉTICA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "champagne-glimmer": "#F9F1EB",
+                        "on-tertiary-container": "#373330",
+                        "inverse-primary": "#f2baa6",
+                        "on-secondary-container": "#66625f",
+                        "surface-variant": "#e4e2e2",
+                        "surface-container-low": "#f6f3f3",
+                        "on-tertiary-fixed": "#1e1b18",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary-container": "#4e2a1d",
+                        "secondary-container": "#e6dedb",
+                        "on-secondary-fixed": "#1e1b19",
+                        "on-background": "#1b1c1c",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f3f0f0",
+                        "secondary": "#625d5b",
+                        "outline": "#83746f",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdbcf",
+                        "on-tertiary-fixed-variant": "#4b4642",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e9e1dc",
+                        "surface-dim": "#dcd9d9",
+                        "outline-variant": "#d5c3bd",
+                        "on-secondary-fixed-variant": "#4a4644",
+                        "inverse-surface": "#303030",
+                        "on-primary-fixed": "#311307",
+                        "surface-container": "#f0eded",
+                        "on-surface": "#1b1c1c",
+                        "secondary-fixed-dim": "#ccc5c2",
+                        "primary-container": "#c4907e",
+                        "surface-container-highest": "#e4e2e2",
+                        "tertiary-fixed-dim": "#cdc5c0",
+                        "on-surface-variant": "#514440",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e8e1de",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary": "#7f5444",
+                        "subtle-blush": "#F5E6E0",
+                        "on-primary-fixed-variant": "#643d2e",
+                        "primary-fixed-dim": "#f2baa6",
+                        "surface-tint": "#7f5444",
+                        "tertiary-container": "#a29b97",
+                        "tertiary": "#635d5a",
+                        "deep-onyx": "#1A1A1A",
+                        "surface": "#fcf9f8",
+                        "background": "#fcf9f8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Libre Caslon Text"],
+                        "body-lg": ["Manrope"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "body-md": ["Manrope"],
+                        "button": ["Manrope"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "label-caps": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "button": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .backdrop-blur-md { backdrop-filter: blur(12px); }
+        .service-card:hover .service-overlay { opacity: 1; }
+        .sticky-category { position: sticky; top: 64px; z-index: 40; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #F9F1EB; }
+        ::-webkit-scrollbar-thumb { background: #c4907e; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md flex justify-between items-center px-margin-mobile h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md tracking-widest text-primary dark:text-primary-fixed-dim">LIFE ESTÉTICA</h1>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:opacity-80 transition-opacity" href="#">INÍCIO</a>
+<a class="font-label-caps text-label-caps text-primary hover:opacity-80 transition-opacity font-bold border-b-2 border-primary" href="#">SERVIÇOS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:opacity-80 transition-opacity" href="#">SOBRE</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:opacity-80 transition-opacity" href="#">CONTATO</a>
+</div>
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</nav>
+<main class="pt-24 pb-32 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Header Section -->
+<header class="mb-section-gap text-center max-w-3xl mx-auto">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em] mb-4 block">EXCELÊNCIA EM AUTOESTIMA</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">Nossos Serviços</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Descubra tratamentos personalizados que unem ciência e estética para realçar sua beleza natural de forma sutil e sofisticada.</p>
+</header>
+<!-- Category Filter (Desktop) -->
+<div class="hidden md:flex justify-center gap-unit mb-16 sticky top-20 z-40 bg-surface/50 backdrop-blur-sm py-4">
+<button class="px-8 py-3 bg-primary text-on-primary font-button text-button rounded-full transition-all">TUDO</button>
+<button class="px-8 py-3 bg-subtle-blush text-primary font-button text-button rounded-full hover:bg-primary-container/20 transition-all">HARMONIZAÇÃO FACIAL</button>
+<button class="px-8 py-3 bg-subtle-blush text-primary font-button text-button rounded-full hover:bg-primary-container/20 transition-all">CORPORAL</button>
+<button class="px-8 py-3 bg-subtle-blush text-primary font-button text-button rounded-full hover:bg-primary-container/20 transition-all">ODONTOLOGIA</button>
+</div>
+<!-- Bento Grid: Harmonização Facial -->
+<section class="mb-section-gap">
+<div class="flex items-center gap-4 mb-12">
+<div class="h-[1px] flex-grow bg-outline-variant"></div>
+<h3 class="font-headline-lg text-headline-lg text-primary uppercase tracking-widest px-4">Harmonização Facial</h3>
+<div class="h-[1px] flex-grow bg-outline-variant"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Botox (Large Card) -->
+<div class="md:col-span-7 group relative overflow-hidden bg-subtle-blush rounded-xl transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-end editorial close-up of a sophisticated woman in her 40s with radiant, smooth skin, lightly touching her forehead. The lighting is soft and warm, reflecting a luxurious spa environment with champagne and blush tones. The overall aesthetic is clean, clinical yet warm, and exudes confidence and timeless beauty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJgDAUmqoZ5kQLgl6yN-QifeohyZuXW7YyIuPLJSfrBNyqwl5Y2TDACQ7_55xe_6l7vlh04O5Uu9RDqhvDfNaa7Q0z1Fcl1L5m1VmRfIkZuH-YIEn4xo_3Qp4Zr-q9XgkCnYf5MWZpQJXpVkFrtnnPwpANXQOYuMmOyQa8FuIoTBpBZ0GoQXc8ekio1YeHMKDQqUvrBdSC5Izjk39NzNUU5rMDWSsY-z9crDluOOgemzPv4MSB0YrxSui6JpVif-6_zsG_YbxpFQ"/>
+</div>
+<div class="p-8">
+<h4 class="font-headline-md text-headline-md text-primary mb-3">Botox</h4>
+<p class="font-body-md text-body-md text-on-secondary-container mb-6 max-w-md">Suavize linhas de expressão e previna o envelhecimento precoce com aplicações precisas de toxina botulínica.</p>
+<button class="font-button text-button text-primary border-b border-primary pb-1 hover:opacity-70 transition-opacity">SAIBA MAIS</button>
+</div>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-md px-4 py-1 rounded-full">
+<span class="font-label-caps text-[10px] text-primary">POPULAR</span>
+</div>
+</div>
+<!-- Preenchimento Labial -->
+<div class="md:col-span-5 group relative overflow-hidden bg-subtle-blush rounded-xl transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+<div class="aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLsS0GUOZjjfyFmmh8Pe2cDPm2edh2zOHp7WIA1lCWMVSW_g9H62xNzLT9rxghKi1mmELv-WdgqPDiRjM0C8JLcec6_MndbsW5pMWozYJ76rRVey_XQYL3M9-szQzXx8SLzh8QCsx0TwdbCuIg1ZXN6TstWmnagPs2IwKvosuzONFYnwP3EhtdZeGwsqlnwT8EnRpglAcoYxZv0UZWyU3XyIe9gggHmf6m7fS_6PvTtXPafGjMw6Zqh-rg"/>
+</div>
+<div class="p-8">
+<h4 class="font-headline-md text-headline-md text-primary mb-3">Preenchimento Labial</h4>
+<p class="font-body-md text-body-md text-on-secondary-container mb-6">Volume, contorno e hidratação profunda para lábios harmoniosos e naturais.</p>
+<button class="font-button text-button text-primary border-b border-primary pb-1 hover:opacity-70 transition-opacity">SAIBA MAIS</button>
+</div>
+</div>
+<!-- Rinomodelação -->
+<div class="md:col-span-4 group relative overflow-hidden bg-subtle-blush rounded-xl transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A profile view of a person with perfectly defined facial features, focusing on the refined bridge of the nose. The image is shot in a high-fashion, high-key style with ethereal soft lighting against a minimal champagne background. The skin texture is flawless and dewy, emphasizing medical precision and aesthetic perfection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJwL-wB9pQJ4PAo2BPMgJhu8SsznTDHcLx7qDH_TZ5jAmBWXkQZGJFlKkOCm7UhGTsIzmpo3SX0555qaCm0BBo-HGU5O8Njj1zRsae4Ns0ulTB748uMIKlL2FzeEsMv4GRKIM4IAmHcVnrDrIqawQB40byIVaF9XRJBLtS1JClVACNETDo_C4llGJ-Pp2i4wJ7vY81iA3Q4nSdJ23xghDuL1sN-tzgFnAXeevu8kbDAYkj5j4Cv0A3pG0usYbmodMewFaLke5cyg"/>
+</div>
+<div class="p-8">
+<h4 class="font-headline-md text-headline-md text-primary mb-3">Rinomodelação</h4>
+<p class="font-body-md text-body-md text-on-secondary-container mb-6">Ajustes estéticos no nariz sem cirurgia, utilizando ácido hialurônico de alta performance.</p>
+<button class="font-button text-button text-primary border-b border-primary pb-1 hover:opacity-70 transition-opacity">SAIBA MAIS</button>
+</div>
+</div>
+<!-- Fios de PDO -->
+<div class="md:col-span-8 group relative overflow-hidden bg-subtle-blush rounded-xl transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+<div class="grid md:grid-cols-2 h-full">
+<div class="aspect-square md:aspect-auto overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLs5RURTR9-_259mEp-XUPRlui5ByrbOY1TAw8XCRk_r13954pe20W3DKh71H4q00ybRS1Fa_vRGWlQo9ACBk8HEEtDRMciWhPRF_tPV2Qz0G2X5dp4-MVda9azQB-Q0VJYTTX7ia2PGUCXu0sWWa_WbAtwNYrzCF1hapSs15H3vGyPKYGtjiAp50kyCeFpyI0zMnKVmXoFeq5iGzdPg-Lye0ga6cTVLTgmcD5NBOM8CavJt_RxMwX4y"/>
+</div>
+<div class="p-8 flex flex-col justify-center">
+<h4 class="font-headline-md text-headline-md text-primary mb-3">Fios de PDO</h4>
+<p class="font-body-md text-body-md text-on-secondary-container mb-6">Bioestimulação de colágeno e efeito lifting imediato para firmeza e sustentação da pele.</p>
+<button class="font-button text-button text-primary border-b border-primary pb-1 self-start hover:opacity-70 transition-opacity">SAIBA MAIS</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Corporal & Others -->
+<section class="mb-section-gap">
+<div class="flex items-center gap-4 mb-12">
+<div class="h-[1px] flex-grow bg-outline-variant"></div>
+<h3 class="font-headline-lg text-headline-lg text-primary uppercase tracking-widest px-4">Estética Corporal</h3>
+<div class="h-[1px] flex-grow bg-outline-variant"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Enzimas -->
+<div class="group overflow-hidden bg-surface-container-low rounded-xl transition-all duration-300">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsttxlh9NVp16lfjcFFai_7XwTlBAhuIyhMkrIvIPDiME-lJTLv5CmNQlTO0oi1DSLrE-MRMSIDmDQ_0LzSYOmC546DsXu9-l8M6XcZh62Kz9xrZ823cwXpJb_-m6BSI96-bdcLLm15O-jQ0yFMFIlJC4v8nQ6w4tTT5Z1GOH82tezyKVvMnUVHEoaDjssUdw5kGr732XpDpTgmPsQEdPBAZNC8sfN_2N6H4NEFiguO99c5wuXztCIz1A"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<button class="bg-surface px-6 py-3 rounded-full text-primary font-button text-button shadow-lg">VER DETALHES</button>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Enzimas</h4>
+<p class="font-body-md text-body-md text-on-secondary-container">Tratamentos focados em gordura localizada e emagrecimento saudável.</p>
+</div>
+</div>
+<!-- Odontologia placeholder -->
+<div class="group overflow-hidden bg-surface-container-low rounded-xl transition-all duration-300">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a radiant, healthy smile with perfectly aligned white teeth. The image is bright and airy, with soft focus on the background. Minimalist and clinical, showcasing the result of high-end dental aesthetics in a professional medical environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa-jS4g1lf6fy12JYuIoAK8a7WD6U9Pk7XfZnmvtHjc7ltkOZtcK87G3RKDh73ZmlNHkv4gFGhcAS1m90AYHZvbGPseAAIAEjs2I5SE-88wzqIhyN1gKeSiDM9PfZFZ6KehRlytKqLHrE1vNu-55Q4ZdMMU5FuS-iXIXRy8JFywjRZ-4nU2ZYKYDMP-HdoVYcqXOS_bEOF0ROzEBT-BRwPCX-aXiJ6Maksil0M2QRzD326nD0oQQX5KivK7fCbSsAKtKyu88aONg"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<button class="bg-surface px-6 py-3 rounded-full text-primary font-button text-button shadow-lg">VER DETALHES</button>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Lentes de Contato</h4>
+<p class="font-body-md text-body-md text-on-secondary-container">A odontologia estética que transforma sorrisos com naturalidade.</p>
+</div>
+</div>
+<!-- General Care placeholder -->
+<div class="group overflow-hidden bg-surface-container-low rounded-xl transition-all duration-300">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Abstract minimalist photography of a drop of clear cosmetic serum falling onto a smooth skin surface. The background is a gradient of soft beige and cream. High-end, luxurious commercial photography style with extreme attention to texture and lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg5t2txNGsq5g_GCVXnRauLK1hCTGGowLqAUhkYcVDWuYh79J9vuMn4Tj61h8Io2UFfrjzPDeK9ACWeiTB1JzYt9b6vfUH4L_54EyOnhY4F_UG4AuKzglKKpL6VnFqSgAS3YSaJ73ZjZPgGQLq38cJNNj9fj9eEgmYcqv1BGhWGGTXztL8ZSzV_Qw_7dNP1RvI_Z10A6be99qI6fKRIb7U27nx0Ziygt_MdAGJH7Iri_8hzmhXSRR7jluJGMNoGcFxulYOr3yUYA"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<button class="bg-surface px-6 py-3 rounded-full text-primary font-button text-button shadow-lg">VER DETALHES</button>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Bioestimuladores</h4>
+<p class="font-body-md text-body-md text-on-secondary-container">Recupere a juventude da pele através da produção natural de colágeno.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-primary text-on-primary rounded-3xl p-12 text-center relative overflow-hidden shadow-2xl">
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-6">Pronta para sua melhor versão?</h2>
+<p class="font-body-lg text-body-lg mb-10 opacity-90 max-w-xl mx-auto">Agende uma avaliação personalizada com nossos especialistas e descubra o protocolo ideal para você.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="px-10 py-4 bg-surface text-primary font-button text-button rounded-full hover:bg-champagne-glimmer transition-all shadow-md">AGENDAR CONSULTA</button>
+<button class="px-10 py-4 border border-surface/30 font-button text-button rounded-full hover:bg-surface/10 transition-all">FALAR NO WHATSAPP</button>
+</div>
+</div>
+<!-- Atmospheric glow -->
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-primary-container/30 rounded-full blur-3xl"></div>
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary-container/30 rounded-full blur-3xl"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="block w-full bg-secondary-container dark:bg-on-tertiary-container flex flex-col items-center text-center p-margin-mobile mb-20 w-full gap-unit">
+<h2 class="font-headline-md text-primary mb-4">LIFE ESTÉTICA</h2>
+<div class="flex flex-wrap justify-center gap-6 mb-8">
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Política de Privacidade</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Termos de Uso</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Localização</a>
+</div>
+<p class="font-body-md text-body-md text-on-secondary-container opacity-60">© 2024 LIFE ESTÉTICA FORTALEZA. TODOS OS DIREITOS RESERVADOS.</p>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-secondary dark:bg-deep-onyx backdrop-blur-xl shadow-[0_-4px_20px_rgba(196,144,126,0.1)] rounded-t-full">
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-fixed bg-primary-container/20 rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">spa</span>
+<span class="font-label-caps text-label-caps">Serviços</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-caps text-label-caps">WhatsApp</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-caps text-label-caps">Agendar</span>
+</a>
+</nav>
+<script>
+        // Simple intersection observer for reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.group').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000');
+            observer.observe(el);
+        });
+    </script>
+</body></html>
