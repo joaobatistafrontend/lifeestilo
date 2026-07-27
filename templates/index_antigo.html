@@ -229,20 +229,36 @@ http://www.tooplate.com/view/2098-health
                          <div class="col-md-4 col-sm-6">
                               <!-- NEWS THUMB -->
                               <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
-                                   <a href="{% url 'detalhes' resul.id %}">
-                                        <img src="{{ resul.imagem_antes.url }}" class="img-responsive" alt="">
-                                   </a>
+                                   {% if resul.imagem_antes %}
+                                        <a href="{% url 'detalhes' resul.id %}">
+                                             <img src="{{ resul.imagem_antes.url }}" class="img-responsive" alt="">
+                                        </a>
+                                   {% endif %}
                                    <div class="news-info">
-                                        <span>{{ resul.data_da_publicacao }}</span>
-                                        <h3><a href="{% url 'detalhes' resul.id %}">{{ resul.assunto }}</a></h3>
-                                        <p>{{ resul.descricao|truncatechars:100 }}</p>
-                                        <div class="author">
-                                             <img src="{{ resul.doutora_responsavel.imagem.url }}" class="img-responsive" alt="">
-                                             <div class="author-info">
-                                                  <h5>{{ resul.doutora_responsavel.nome }}</h5>
-                                                  <p>{{ resul.doutora_responsavel.descricao_curricular }}</p>
+                                        {% if resul.data_da_publicacao %}
+                                             <span>{{ resul.data_da_publicacao }}</span>
+                                        {% endif %}
+                                        {% if resul.assunto %}
+                                             <h3><a href="{% url 'detalhes' resul.id %}">{{ resul.assunto }}</a></h3>
+                                        {% endif %}
+                                        {% if resul.descricao %}
+                                             <p>{{ resul.descricao|truncatechars:100 }}</p>
+                                        {% endif %}
+                                        {% if resul.doutora_responsavel %}
+                                             <div class="author">
+                                                  {% if resul.doutora_responsavel.imagem %}
+                                                       <img src="{{ resul.doutora_responsavel.imagem.url }}" class="img-responsive" alt="">
+                                                  {% endif %}
+                                                  <div class="author-info">
+                                                       {% if resul.doutora_responsavel.nome %}
+                                                            <h5>{{ resul.doutora_responsavel.nome }}</h5>
+                                                       {% endif %}
+                                                       {% if resul.doutora_responsavel.descricao_curricular %}
+                                                            <p>{{ resul.doutora_responsavel.descricao_curricular }}</p>
+                                                       {% endif %}
+                                                  </div>
                                              </div>
-                                        </div>
+                                        {% endif %}
                                    </div>
                               </div>
                          </div>

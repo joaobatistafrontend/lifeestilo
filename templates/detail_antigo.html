@@ -135,7 +135,7 @@ http://www.tooplate.com/view/2098-health
                                                   <div class="media-object pull-left">
                                                        {% if resul.imagem_depois %}
                                                             <a href="{% url 'detalhes' resul.id %}"><img src="{{ resul.imagem_depois.url }}" class="img-responsive" alt=""></a>
-                                                       {% else %}
+                                                       {% elif resul.imagem_antes %}
                                                             <a href="{% url 'detalhes' resul.id %}"><img src="{{ resul.imagem_antes.url }}" class="img-responsive" alt=""></a>
                                                        {% endif %}
 
